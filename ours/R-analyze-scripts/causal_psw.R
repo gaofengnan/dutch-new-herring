@@ -80,6 +80,8 @@ atlantic <- as.factor(supplier_AD)
 
 Return <- as.factor(Repeat == "*")
 
+# final_score <- vollaard.df$finalscore
+
 ours <- data.frame(final_score, weight, temp, fat, price, freshly_cleaned, micro, ripeness, cleaning, k30, year, atlantic, Return)
 
 # first study on the k30 variable, it is by far not statistically significant with even the most basic causal analysis via propensity score weighting
@@ -107,12 +109,14 @@ ours <- dplyr::select(ours,-psweight)
 ours$k30 <- as.factor(ours$k30)
 
 
-# second model to study atlantic without Return as features in propensity score weighing 
+# second model to study atlantic without Return as features in propensity score 
+# weighting 
 # all data points
 # atlantic is barely statistically significant (p-value 0.08)
 
 ours$atlantic <- as.numeric(ours$atlantic) - 1 # go back to numeric representation for now
-ps.herring.gbm2 <- ps(atlantic ~ weight + temp + fat + price + freshly_cleaned + micro + ripeness + cleaning + year + k30,
+ps.herring.gbm2 <- ps(atlantic ~ weight + temp + fat + price + freshly_cleaned 
+                      + micro + ripeness + cleaning + year + k30,
                       data=ours,
                       n.trees=10000,
                       interaction.depth=2,
@@ -134,9 +138,10 @@ ours <- dplyr::select(ours,-psweight)
 
 # third model, all data points, with Return put into the covariates for the analysis 
 # atlantic is no longer statistically significant
-ps.herring.gbm3 <- ps(atlantic ~ weight + temp + fat + price + freshly_cleaned + micro + ripeness + cleaning + year + k30 + Return,
+ps.herring.gbm3 <- ps(atlantic ~ weight + temp + fat + price + freshly_cleaned 
+                      + micro + ripeness + cleaning + year + k30 + Return,
                       data=ours,
-                      n.trees=10000,
+                      n.trees=20000,
                       interaction.depth=2,
                       shrinkage=0.01,
                       estimand = "ATT",
@@ -186,7 +191,7 @@ temp <- dplyr::select(temp, -psweight)
 
 temp <- subset(ours, (ours$final_score > 0 & ours$year =="2017"))
 
-ps.herring.gbm4 <- ps(atlantic ~ weight + temp + fat + price + freshly_cleaned + micro + ripeness + cleaning + k30 + Return,
+ps.herring.gbm5 <- ps(atlantic ~ weight + temp + fat + price + freshly_cleaned + micro + ripeness + cleaning + k30 + Return,
                       data=temp,
                       n.trees=10000,
                       interaction.depth=2,
@@ -195,13 +200,13 @@ ps.herring.gbm4 <- ps(atlantic ~ weight + temp + fat + price + freshly_cleaned +
                       stop.method=c("es.mean","ks.max"),
                       n.minobsinnode = 10,
                       verbose=FALSE)
-plot(ps.herring.gbm4)
+plot(ps.herring.gbm5)
 
-temp$psweight <- get.weights(ps.herring.gbm4, stop.method="es.mean")
+temp$psweight <- get.weights(ps.herring.gbm5, stop.method="es.mean")
 
 design.ps <- svydesign(ids=~1, weights=~psweight, data=temp)
 
-glm4 <- svyglm(final_score ~ atlantic, design=design.ps)
+glm5 <- svyglm(final_score ~ atlantic, design=design.ps)
 
-summary(glm4)
+summary(glm5)
 temp <- dplyr::select(temp, -psweight) 
