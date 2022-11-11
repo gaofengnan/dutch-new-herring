@@ -67,7 +67,7 @@ data_new %>%
   ggplot() +
   geom_sf(aes(fill = Population_density)) +
   # geom_sf() +
-  # scale_fill_viridis_c("pop. density\nby municipality") + 
+  # scale_fill_viridis_c("pop. density\nby municipality", option = "A") + 
   scale_fill_continuous("pop. density\nby municipality",low = "white", high = "black", guide = "colorbar")+
   geom_sf(aes(shape=year,color=year), alpha = 0.65, size = 1.7, # shape = 20, 
           data = vendors_loc_sf) +
