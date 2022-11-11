@@ -252,10 +252,10 @@ for (j in 3:ncol(new_df)) {
 print(drop1(lm_all, test = "F"))
 
 ## FN: Now we do exhaustive search with leaps from leaps package
-require("ExhaustiveSearch")
+# require("ExhaustiveSearch")
 # df_tmp <- df[,c(2,3,4,5)]
-df_tmp <- new_df[,c(-1)]
-ES <- ExhaustiveSearch::ExhaustiveSearch(final_score ~ weight + price_cat + temp_cat, data=df_tmp, family="gaussian", performanceMeasure = "AIC")
+# df_tmp <- new_df[,c(-1)]
+# ES <- ExhaustiveSearch::ExhaustiveSearch(final_score ~ weight + price_cat + temp_cat, data=df_tmp, family="gaussian", performanceMeasure = "AIC")
 # change the formula to final_score ~ . for all variable search, warning: very slow and computational errors prone! 
-print(ES)
+# print(ES)
 
