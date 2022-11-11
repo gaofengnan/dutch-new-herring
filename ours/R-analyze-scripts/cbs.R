@@ -3,26 +3,38 @@ library(cbsodataR)
 
 
 
-cbs_toc <- cbs_get_toc()
-datasets <- cbs_get_datasets() 
+# cbs_toc <- cbs_get_toc()
+# datasets <- cbs_get_datasets() 
+# 
+# datasets %>% 
+#   filter(Language == "en") %>% # only English tables
+#   select(Identifier, ShortTitle) 
+# 
+# regional_key_figures <- cbsodata4::cbs4_get_data("70072ned")
 
-datasets %>% 
-  filter(Language == "en") %>% # only English tables
-  select(Identifier, ShortTitle) 
 
-regional_key_figures <- cbsodata4::cbs4_get_data("70072ned")
-
-
-pop <- read_delim("Population_dynamics__region_11112022_101336.csv", 
-                 delim = ";", escape_double = FALSE, trim_ws = TRUE)
-# pop %>% rename("Population on 1 January (number)", "Population")
-pop <- pop[pop$Periods =="2021",]
-pop <- pop[!is.na(pop$`Population on 1 January (number)`),]
-nrow(pop)
-pop$Regions <- str_trim(pop$Regions)
+# pop <- read_delim("Population_dynamics__region_11112022_101336.csv", 
+#                  delim = ";", escape_double = FALSE, trim_ws = TRUE)
+# # pop %>% rename("Population on 1 January (number)", "Population")
+# pop <- pop[pop$Periods =="2021",]
+# pop <- pop[!is.na(pop$`Population on 1 January (number)`),]
+# nrow(pop)
+# pop$Regions <- str_trim(pop$Regions)
 
 library(tidyverse)
 library(sf)
+
+
+# for plotting
+library(extrafont)
+library(ggplot2)
+library(ggspatial)
+library(patchwork)
+library(scico)
+# library(vapoRwave)
+# for data wrangling
+library(dplyr)
+
 
 # Find out which columns are available
 metadata <- cbs_get_meta("83765NED")
@@ -50,9 +62,9 @@ vendor_plot_title <- "Venders of 2016 and 2017, Dutch New Herring" # (with pop. 
 # Create a thematic map
 data %>%
   ggplot() +
-  # geom_sf(aes(fill = pop_density)) +
-  geom_sf() +
-  # scale_fill_viridis_c("pop. density\nby municipality") + 
+  geom_sf(aes(fill = pop_density)) +
+  # geom_sf() +
+  scale_fill_viridis_c("pop. density\nby municipality") + 
   scale_fill_continuous("pop. density\nby municipality",low = "white", high = "black", guide = "colorbar")+
   geom_sf(color = "red", alpha = 0.5, size = 2,fill = "darkred", shape = 20, 
           data = vendors_loc_sf) +
