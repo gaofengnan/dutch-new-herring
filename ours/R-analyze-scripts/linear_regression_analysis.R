@@ -7,7 +7,7 @@ library(tidyverse)
 
 source('./ancillary.R')
 
-ours.df <- read_excel("ours.xlsx")
+ours.df <- read_excel("datasets/ours.xlsx")
 ours.df <- arrange(ours.df, vollaard_id)
 names(ours.df)
 str(ours.df)
@@ -92,7 +92,7 @@ str(ripeness)
 table(cleaning)
 str(cleaning)
 
-vollaard.df <- read_excel("vollaard.xlsx")
+vollaard.df <- read_excel("datasets/vollaard.xlsx")
 vollaard.df.rescaled <- scale(vollaard.df)
 names(vollaard.df)
 
