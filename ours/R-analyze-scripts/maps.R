@@ -1,7 +1,9 @@
+
+rm(list = ls())
+
 library(dplyr) # not needed, but used in examples below
 # library(cbsodataR)
 
-rm(list = ls())
 # detach(ours.df)
 # setwd("~/Dropbox/fengnan_richard/code")
 # setwd("/Users/richardgill/Desktop/Haring/code")
@@ -24,7 +26,7 @@ year[year == "0"] <- "2016"
 year[year == "1"] <- "2017"
 year <- factor(year, levels = c("2016", "2017"))
 
-ours.maps.df <- select(ours.df, c("name","address","unique_id","vollaard_id"))
+ours.maps.df <- select(ours.df, c("name","address","unique_id","vollaard_id", "cijfer"))
 ours.maps.df <- cbind(ours.maps.df, year)
 
 # ours.maps.df$munipality_id <- "EMPTY"
@@ -59,7 +61,6 @@ library(patchwork)
 library(scico)
 # library(vapoRwave)
 # for data wrangling
-library(dplyr)
  
   
 # Retrieve data with municipal boundaries from PDOK
@@ -89,12 +90,14 @@ p <-
   geom_sf(aes(fill = Population_density)) +
   # geom_sf() +
   # scale_fill_viridis_c("pop. density\nby municipality", option = "A") + 
-  scale_fill_gradient("pop. density\nby municipality",trans = "log", 
-                      low = alpha("white",0.5), high = alpha("black",0.75), guide = "colorbar")+
-  geom_sf(aes(shape=year,color=year), alpha = 0.75, size = 1.7, # shape = 20, 
+  scale_fill_gradient("pop. density\nby community",trans = "log", 
+                      low = alpha("white",0.5), high = alpha("black",0.75), 
+                      guide = "colorbar")+
+  geom_sf(aes(size = cijfer, color=year), alpha = 0.75, # size = 1.7, # shape = 20, 
           data = vendors_loc_sf) +
   # scale_shape_manual(values = c(15, 16)) +
   scale_color_manual(values = c("darkred", "cyan")) +
+  scale_size_area("score", max_size = 4) +
   # geom_point(data = ours.maps.df, aes(x = lon, y = lat), size = 4, 
   #            shape = 23, fill = "darkred")+
   labs(title = vendor_plot_title, fill = "") +
