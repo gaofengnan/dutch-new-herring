@@ -109,3 +109,7 @@ p
 # png('tr_tst1.png',width=2000,height=2000,units="px",bg = "transparent")
 # p
 # dev.off()
+
+
+## krigging
+
