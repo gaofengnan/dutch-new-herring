@@ -49,10 +49,7 @@ pop_by_municipality_2016 <- read_excel("datasets/dutch_municipality_2016.xlsx")
 pop_by_municipality_2016$statcode <- paste0("GM", pop_by_municipality_2016$Gemeentecode)
 
 
-# library(tidyverse)
-library(sf)
-
-
+  
 # for plotting
 library(extrafont)
 library(ggplot2)
@@ -78,14 +75,14 @@ pop_density_2017 <- rbind(pop_density_2017, c("Meierijstad", "GM1948", 439))
 pop_density_2017$Population_density <- as.numeric(pop_density_2017$Population_density)
 
  
-data_new <- 
+commune_density <- 
   municipalBoundaries %>%
   left_join(pop_density_2017, by=c(statcode="statcode"))
 
 vendor_plot_title <- "Venders of 2016 and 2017, Dutch New Herring" # (with pop. density)"
 # Create a thematic map
 p <- 
-  data_new %>%
+  commune_density %>%
   ggplot() +
   geom_sf(aes(fill = Population_density)) +
   # geom_sf() +
@@ -112,4 +109,28 @@ p
 
 
 ## krigging
+# generate a SPDF
+herring <- ours.maps.df[ours.maps.df$cijfer!=0,]
 
+# add the covariate of municipality population density
+# fill in later
+for (idx in 1:nrow(ours.maps.df)) {
+  commune <- substring(str_extract(ours.maps.df$address[idx], '\\s-\\s.+'),4)
+  pop_density_2017[Municipality_2017==commune,]
+}
+# non_zero_grade_idx <- ours.df$eindcijfer!=0
+# vollaard.df.non.zero <- as.data.frame(vollaard.df[non_zero_grade_idx,])
+ours.df$long <- ours.maps.df$lon
+ours.df$lat <- ours.maps.df$lat 
+attach(ours.df)
+quad.fit <- lm(cijfer~1+long+I(long**2)+lat+I(lat**2)+long*lat)
+long_lat_contour <- 
+pred.values.contour <- predict(quad.fit, )
+quad.fit <- lm(cijfer~1+long+I(long**2)+lat+I(lat**2)+long*lat+ripeness +price_per_100g+weight+cleanness+fat_percentage+micro)
+
+summary(quad.fit)
+
+sp::coordinates(herring) <- ~ lon + lat
+her_vgm <- gstat::variogram(cijfer~1, herring)
+plot(her_vgm)
+her_fit <- gstat::fit.variogram(her_vgm, model=vgm(psill = 8, "Exp", range = NA, 1))
