@@ -26,7 +26,7 @@ year[year == "0"] <- "2016"
 year[year == "1"] <- "2017"
 year <- factor(year, levels = c("2016", "2017"))
 
-ours.maps.df <- select(ours.df, c("name","address","unique_id","vollaard_id", "cijfer"))
+ours.maps.df <- dplyr::select(ours.df, c("name","address","unique_id","vollaard_id", "cijfer"))
 ours.maps.df <- cbind(ours.maps.df, year)
 
 # ours.maps.df$munipality_id <- "EMPTY"
@@ -70,7 +70,7 @@ not_2017_idx <- statcode_2016 %in% statcode_2016[!(statcode_2016 %in% statcode_2
 
 
 pop_density_2017 <- pop_by_municipality_2016[!not_2017_idx,]
-pop_density_2017 <- select(pop_density_2017, "Municipality_2017", "statcode", "Population_density")
+pop_density_2017 <- dplyr::select(pop_density_2017, "Municipality_2017", "statcode", "Population_density")
 pop_density_2017 <- rbind(pop_density_2017, c("Meierijstad", "GM1948", 439))
 pop_density_2017$Population_density <- as.numeric(pop_density_2017$Population_density)
 
@@ -108,29 +108,103 @@ p
 # dev.off()
 
 
+# add the covariate of municipality population density
+# fill in later
+# for (idx in 1:nrow(ours.maps.df)) {
+#   commune <- substring(str_extract(ours.maps.df$address[idx], '\\s-\\s.+'),4)
+#   pop_density_2017[Municipality_2017==commune,]
+# }
+# non_zero_grade_idx <- ours.df$eindcijfer!=0
+# vollaard.df.non.zero <- as.data.frame(vollaard.df[non_zero_grade_idx,])
+ours.df$lon <- ours.maps.df$lon
+ours.df$lat <- ours.maps.df$lat 
+attach(ours.df)
+quad.fit <- lm(cijfer~1+lon+I(lon**2)+lat+I(lat**2)+I(lon*lat))
+lon_grid <- 3.2 + 1:100*4/100; lat_grid <- 50.5 + 1:100*3/100
+lon_lat_grid <- as.data.frame(expand_grid(lon_grid, lat_grid))
+lon_lat_contour <- lon_lat_grid %>% add_column(Incpt = 1, lonSq = lon_lat_grid[,1]**2, latSq = lon_lat_grid[,2]**2, lonXlat=lon_lat_grid[,1]*lon_lat_grid[,2])
+lon_lat_contour <- lon_lat_contour[,c(3,1,4,2,5,6)]
+quad.fit.coef <- coefficients(quad.fit)
+pred.values.contour <- as.matrix(lon_lat_contour) %*% as.matrix(quad.fit.coef)
+
+get_countries <-  function(long, lat)
+{ 
+  points <- cbind(long, lat)
+  countriesSP <- rworldmap::getMap(resolution = 'high')
+  pointsSP = sp::SpatialPoints(points, sp::CRS(sp::proj4string(countriesSP)))  
+  sp::over(pointsSP, countriesSP)$ADMIN
+}
+
+
+
+# NL_or_not <- (get_countries(lon_lat_grid[,1], lon_lat_grid[,2])=="Netherlands")
+NL_or_not[is.na(NL_or_not)] <- FALSE
+quad.fit.contour.NL <- data_frame(lon=lon_lat_grid[,1], lat=lon_lat_grid[,2], quad.fit.value=pred.values.contour)
+
+# utrecht_gps <- c(5.116667, 52.083333)
+# ret <- apply(lon_lat_grid[NL_or_not,], 1, function(v) {sum((v-utrecht_gps)^2)})
+utrecht_grid_idx <- 4753 # in original grid
+utrecht_drift <- as.numeric(6- quad.fit.contour.NL[utrecht_grid_idx,]$quad.fit.value)
+
+quad.fit.contour.NL <- quad.fit.contour.NL[NL_or_not,] 
+quad.fit.contour.NL$quad.fit.value <- quad.fit.contour.NL$quad.fit.value + utrecht_drift
+quad.fit.contour.NL.sf <- st_as_sf(quad.fit.contour.NL,coords=c("lon","lat"), crs = 4326)
+
+
+
+
+NL_map <- ggmap::get_map(location = c(left=3.2,right=7.5,bottom=50.5,top=54), source = 'stamen', maptype = 'toner') 
+NL <- ggmap::ggmap(NL_map,extent="normal")
+NL + geom_contour_filled(data=quad.fit.contour.NL, aes(lon,lat,z=quad.fit.value), breaks=(1:14)/2)+ ggtitle("without covariates") +
+  # scale_fill_manual(values=heat.colors(15)[c(1:12,15)],drop=FALSE)
+  guides(fill=guide_legend(reverse=TRUE))  + 
+    # scale_fill_viridis_b()
+    scale_fill_manual(values = viridis::viridis_pal()(13),drop=FALSE)
+ 
+quad.fit <- lm(cijfer~1+lon+I(lon**2)+lat+I(lat**2)+I(lon*lat)+ripeness +price_per_100g+weight+cleanness+fat_percentage+micro)
+
+summary(quad.fit)
+
+lon_lat_contour <- lon_lat_grid %>% add_column(Incpt = 1, lonSq = lon_lat_grid[,1]**2, latSq = lon_lat_grid[,2]**2, lonXlat=lon_lat_grid[,1]*lon_lat_grid[,2])
+lon_lat_contour <- lon_lat_contour[,c(3,1,4,2,5,6)]
+quad.fit.coef <- coefficients(quad.fit)
+pred.values.contour <- as.matrix(lon_lat_contour) %*% as.matrix(quad.fit.coef[1:6]) 
+
+# NL_or_not <- (get_countries(lon_lat_grid[,1], lon_lat_grid[,2])=="Netherlands")
+# NL_or_not[is.na(NL_or_not)] <- FALSE
+quad.fit.contour.NL <- data_frame(lon=lon_lat_grid[,1], lat=lon_lat_grid[,2], quad.fit.value=pred.values.contour)
+
+utrecht_drift <- as.numeric(6- quad.fit.contour.NL[utrecht_grid_idx,]$quad.fit.value)
+
+quad.fit.contour.NL <- quad.fit.contour.NL[NL_or_not,] 
+quad.fit.contour.NL$quad.fit.value <- quad.fit.contour.NL$quad.fit.value + utrecht_drift
+
+# quad.fit.contour.NL.sf <- st_as_sf(quad.fit.contour.NL,coords=c("lon","lat"), crs = 4326)
+
+# NL_map <- ggmap::get_map(location = c(left=3.2,right=7.5,bottom=50.5,top=54), source = 'stamen', maptype = 'toner') 
+NL <- ggmap::ggmap(NL_map,extent="normal")
+NL + geom_contour_filled(data=quad.fit.contour.NL, 
+                         aes(lon,lat,z=quad.fit.value),
+                         breaks = (6+(1:8))/2) +
+  ggtitle("with covariates") +
+  # scale_fill_manual(values = heat.colors(15)[-c((1:6),13,14)],drop=FALSE) +
+  # theme_void() + scale_color_continuous("pred. score") 
+  guides(fill=guide_legend(reverse=TRUE))  + 
+  # scale_fill_viridis_b()
+  scale_fill_manual(values = viridis::viridis_pal()(13)[-(1:6)],drop=FALSE)
+
+
+
+
 ## krigging
 # generate a SPDF
 herring <- ours.maps.df[ours.maps.df$cijfer!=0,]
 
-# add the covariate of municipality population density
-# fill in later
-for (idx in 1:nrow(ours.maps.df)) {
-  commune <- substring(str_extract(ours.maps.df$address[idx], '\\s-\\s.+'),4)
-  pop_density_2017[Municipality_2017==commune,]
-}
-# non_zero_grade_idx <- ours.df$eindcijfer!=0
-# vollaard.df.non.zero <- as.data.frame(vollaard.df[non_zero_grade_idx,])
-ours.df$long <- ours.maps.df$lon
-ours.df$lat <- ours.maps.df$lat 
-attach(ours.df)
-quad.fit <- lm(cijfer~1+long+I(long**2)+lat+I(lat**2)+long*lat)
-long_lat_contour <- 
-pred.values.contour <- predict(quad.fit, )
-quad.fit <- lm(cijfer~1+long+I(long**2)+lat+I(lat**2)+long*lat+ripeness +price_per_100g+weight+cleanness+fat_percentage+micro)
 
-summary(quad.fit)
+# sp::coordinates(herring) <- ~ lon + lat
+# her_vgm <- gstat::variogram(cijfer~1, herring)
+# plot(her_vgm)
+# her_fit <- gstat::fit.variogram(her_vgm, model=vgm(psill = 8, "Exp", range = NA, 1))
 
-sp::coordinates(herring) <- ~ lon + lat
-her_vgm <- gstat::variogram(cijfer~1, herring)
-plot(her_vgm)
-her_fit <- gstat::fit.variogram(her_vgm, model=vgm(psill = 8, "Exp", range = NA, 1))
+
+
