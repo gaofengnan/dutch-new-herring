@@ -156,7 +156,7 @@ quad.fit.contour.NL.sf <- st_as_sf(quad.fit.contour.NL,coords=c("lon","lat"), cr
 
 NL_map <- ggmap::get_map(location = c(left=3.2,right=7.5,bottom=50.5,top=54), source = 'stamen', maptype = 'toner') 
 NL <- ggmap::ggmap(NL_map,extent="normal")
-NL + geom_contour_filled(data=quad.fit.contour.NL, aes(lon,lat,z=quad.fit.value), breaks=(1:14)/2)+ ggtitle("without covariates") +
+NL + geom_contour_filled(data=quad.fit.contour.NL, aes(lon,lat,z=quad.fit.value), alpha=0.8, breaks=(1:14)/2)+ ggtitle("without covariates") +
   # scale_fill_manual(values=heat.colors(15)[c(1:12,15)],drop=FALSE)
   guides(fill=guide_legend(reverse=TRUE))  + 
     # scale_fill_viridis_b()
