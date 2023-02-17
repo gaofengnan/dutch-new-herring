@@ -93,7 +93,7 @@ table(cleaning)
 str(cleaning)
 
 vollaard.df <- read_excel("datasets/vollaard.xlsx")
-vollaard.df.rescaled <- scale(vollaard.df)
+# vollaard.df.rescaled <- scale(vollaard.df)
 names(vollaard.df)
 
 k30 <- vollaard.df$k30
@@ -259,3 +259,9 @@ print(drop1(lm_all, test = "F"))
 # change the formula to final_score ~ . for all variable search, warning: very slow and computational errors prone! 
 # print(ES)
 
+
+## Meulman type stuff
+year_2017 <- year==2017
+meulman_func <- function(rank) {
+  
+}

@@ -29,6 +29,7 @@ year <- factor(year, levels = c("2016", "2017"))
 ours.maps.df <- dplyr::select(ours.df, c("name","address","unique_id","vollaard_id", "cijfer"))
 ours.maps.df <- cbind(ours.maps.df, year)
 
+
 # ours.maps.df$munipality_id <- "EMPTY"
 
 # vendor_geocodes <- ggmap::geocode(ours.maps.df$address) 
@@ -137,7 +138,7 @@ get_countries <-  function(long, lat)
 
 
 
-# NL_or_not <- (get_countries(lon_lat_grid[,1], lon_lat_grid[,2])=="Netherlands")
+NL_or_not <- (get_countries(lon_lat_grid[,1], lon_lat_grid[,2])=="Netherlands")
 NL_or_not[is.na(NL_or_not)] <- FALSE
 quad.fit.contour.NL <- data_frame(lon=lon_lat_grid[,1], lat=lon_lat_grid[,2], quad.fit.value=pred.values.contour)
 
@@ -193,8 +194,144 @@ NL + geom_contour_filled(data=quad.fit.contour.NL,
   # scale_fill_viridis_b()
   scale_fill_manual(values = viridis::viridis_pal()(13)[-(1:6)],drop=FALSE)
 
+attach(ours.df)
+
+table(Repeat)
+Repeat[is.na(Repeat)] <- "_"
+table(Repeat)
+
+final_score <- eindcijfer
+
+weight <- weight
+
+temp <- temp
+
+temp_cat <- cut(temp, breaks = c(-3, 7, 10, 20), right = TRUE)
+
+fat <- fat_percentage
+
+fat_cat <-cut(fat_percentage, c(0, 10, 14, 20), right = TRUE)
+
+price <- price_per_100g
+
+price_cat <- cut(ours.df$price_per_100g, breaks = c(1, 2.84, 3.48, 5.1 ), right = TRUE)
+
+freshly_cleaned <- vers_van_het_mes
+
+freshly_cleaned[freshly_cleaned == "Ja"] <- "Yes"
+freshly_cleaned[freshly_cleaned == "Nee"] <- "No"
+freshly_cleaned <- factor(freshly_cleaned, levels = c("No", "Yes"))
+
+micro[micro == "Zeer goed"] <- "Goed"
+micro[micro == "Goed"] <- "Good"
+micro[micro == "Voldoende"] <- "Sufficient"
+micro[micro == "Slecht"] <- "Bad"
+micro[micro == "Waarschuwingsfase"] <- "Warning"
+micro[micro == "Afkeurenswaardig"] <- "Danger"
+micro[micro == "Afgekeurd"] <- "Danger"
+
+micro <- factor(micro, levels = c("Good", "Sufficient", "Bad", "Warning", "Danger"))
+
+ripeness[ripeness == "Groen"] <- "Green"
+ripeness[ripeness == "Licht"] <- "Light"
+ripeness[ripeness == "Gemiddeld"] <- "Average"
+ripeness[ripeness == "Sterk"] <- "Strong"
+ripeness[ripeness == "Bedorven"] <- "Rotten"
+ripeness <- factor(ripeness, levels = c("Light", "Average", "Green", "Strong", "Rotten")) # light is the reference category of Vollaard
+
+cleaning <- cleanness
+
+cleaning[cleaning == "Zeer goed"] <- "Very good"
+cleaning[cleaning == "Goed"] <- "Good"
+cleaning[cleaning == "Matig"] <- "Poor"
+cleaning[cleaning == "Slecht"] <- "Bad"
+
+cleaning <- factor(cleaning, levels = c("Very good", "Good", "Poor", "Bad"))
+
+summary(weight)
+str(weight)
+
+summary(temp)
+table(temp_cat)
+str(temp_cat)
+
+summary(fat)
+table(fat_cat)
+str(fat_cat)
+
+summary(price)
+table(price_cat)
+str(price_cat)
+
+table(freshly_cleaned)
+str(freshly_cleaned)
+
+table(micro)
+str(micro)
+
+table(ripeness)
+str(ripeness)
+
+table(cleaning)
+str(cleaning)
+
+vollaard.df <- read_excel("datasets/vollaard.xlsx")
+# vollaard.df.rescaled <- scale(vollaard.df)
+names(vollaard.df)
+
+k30 <- vollaard.df$k30
+k30 <- as.character(k30)
+k30[k30 == "0"] <- "<30km"
+k30[k30 == "1"] <- ">30km"
+k30 <- factor(k30, levels = c("<30km", ">30km"))
+
+year <- vollaard.df$yr2017
+year <- as.character(year)
+year[year == "0"] <- "2016"
+year[year == "1"] <- "2017"
+year <- factor(year, levels = c("2016", "2017"))
+
+atlantic <- (supplier_AD == "A")
+
+Return <- (Repeat == "*")
 
 
+## stupid artificial indicator
+# first we find out the outlets that are in the most favorable region
+most_favorable <- rep(FALSE,nrow(ours.maps.df))
+excellent_objective <- rep(FALSE,nrow(ours.maps.df))
+for (i in 1:nrow(ours.maps.df)) {
+  outlet <- ours.maps.df[i,]
+  # outlet_extra <- ours.df[i,]
+  grid_i <- as.numeric(round((outlet["lon"]-3.2)/0.04))
+  grid_j <- as.numeric(round((outlet["lat"]-50.5)/0.03))
+  idx_grid <- (grid_i-1)*100 +grid_j
+  # lon_lat_grid[idx_grid,] 
+  most_favorable[i] <- (pred.values.contour[idx_grid] + utrecht_drift>6)
+  excellent_objective[i] <- (freshly_cleaned[i]=="Yes" & micro[i]=="Good" & cleaning[i]=="Very good" & (temp[i] < 7) & (fat[i]>12))
+}
+
+Nrep <- 1000
+pv <- rep(-1, Nrep)
+for (iter in 1:Nrep) {
+  iter <- 68
+  set.seed(iter+2023)
+electable <- (1:nrow(ours.df))[(most_favorable & excellent_objective)]
+ridi_indi <- rep(FALSE,nrow(ours.maps.df))
+ridi_set <- (1:nrow(ours.df))[sample(electable, size=10, replace=FALSE)] 
+ridi_indi[ridi_set] <- TRUE
+ridi_indi <- factor(ridi_indi)
+
+source('./ancillary.R')
+
+final_score_vollaardized <- score_pm_rearrange(final_score,eps_new = 0.2) + 7.5
+
+first.lm <- lm(final_score_vollaardized ~ weight + temp_cat + fat_cat + price_cat + freshly_cleaned + micro + ripeness + cleaning + year + ridi_indi )
+# summary(first.lm)
+pv[iter] <- tail(summary(first.lm)$coefficients[,4],1)
+}
+range(pv)
+ours.ridi.df <- ours.df[ridi_set,]
 
 ## krigging
 # generate a SPDF
