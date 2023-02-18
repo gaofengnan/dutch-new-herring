@@ -26,7 +26,7 @@ year[year == "0"] <- "2016"
 year[year == "1"] <- "2017"
 year <- factor(year, levels = c("2016", "2017"))
 
-ours.maps.df <- dplyr::select(ours.df, c("name","address","unique_id","vollaard_id", "cijfer"))
+ours.maps.df <- dplyr::select(ours.df, c("name","address","unique_id","vollaard_id", "supplier_AD", "cijfer"))
 ours.maps.df <- cbind(ours.maps.df, year)
 
 
@@ -91,8 +91,8 @@ p <-
   scale_fill_gradient("pop. density\nby community",trans = "log", 
                       low = alpha("white",0.5), high = alpha("black",0.75), 
                       guide = "colorbar")+
-  geom_sf(aes(size = cijfer, color=year), alpha = 0.75, # size = 1.7, # shape = 20, 
-          data = vendors_loc_sf) +
+  geom_sf(aes(size = cijfer, color=year), alpha = 0.5, # size = 1.7, # shape = 20, 
+          data = dplyr::filter(vendors_loc_sf, supplier_AD=="A")) +
   # scale_shape_manual(values = c(15, 16)) +
   scale_color_manual(values = c("darkred", "cyan")) +
   scale_size_area("score", max_size = 4) +
@@ -186,13 +186,14 @@ quad.fit.contour.NL$quad.fit.value <- quad.fit.contour.NL$quad.fit.value + utrec
 NL <- ggmap::ggmap(NL_map,extent="normal")
 NL + geom_contour_filled(data=quad.fit.contour.NL, 
                          aes(lon,lat,z=quad.fit.value),
-                         breaks = (6+(1:8))/2) +
+                         breaks = (6+(1:8))/2, alpha = 0.7) +
   ggtitle("with covariates") +
   # scale_fill_manual(values = heat.colors(15)[-c((1:6),13,14)],drop=FALSE) +
   # theme_void() + scale_color_continuous("pred. score") 
   guides(fill=guide_legend(reverse=TRUE))  + 
   # scale_fill_viridis_b()
-  scale_fill_manual(values = viridis::viridis_pal()(13)[-(1:6)],drop=FALSE)
+  scale_fill_manual(values = viridis::viridis_pal()(13)[-(1:6)],drop=FALSE)+
+  geom_point(data=ours.maps.df, aes(x=lon,y=lat, color=supplier_AD), alpha=0.5)
 
 attach(ours.df)
 

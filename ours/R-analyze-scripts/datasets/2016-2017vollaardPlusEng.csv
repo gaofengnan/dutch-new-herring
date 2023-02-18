@@ -1,0 +1,293 @@
+;Vollaard_id;weight;micro_cat;micro_num;ripeness_cat;ripeness_num;cleaning_cat;cleaning_num;temperature;temp_cat;fresh_cat;fresh_num;fat_num;fat_cat;price_per_100g;price_cat;finalscore;top10;nottop10;atlantic;within30km;year2017;original_ID;name;address
+132;253;77;Slecht;3;Licht;1;Goed;2;8.9;2;nietvers;0;4.6;1;3.57;3;13;0;1;0;1;1;86;024 Vis;Zwaneveld 8020 - Nijmegen
+86;151;65;Zeer goed;1;Bedorven;4;Goed;2;6.1;1;nietvers;0;12.2;2;1.37;1;7.5;0;1;0;1;1;140;Albert Heijn (Wageningen);Stadsbrink 375 - Wageningen
+119;244;67;Voldoende;2;Sterk;3;Goed;2;6.7;1;nietvers;0;12.6;2;1.86;1;9.5;0;1;0;1;0;120;Albert Heijn (Houten);Cardo 12 - Houten
+126;261;62;Zeer goed;1;Sterk;3;Goed;2;9.1;2;nietvers;0;12.7;2;1.6;1;9;0;1;0;1;0;125;Albert Heijn (Maastricht);Burgemeester Cortenstraat 8 - Maastricht
+77;175;71;Zeer goed;1;Sterk;3;Goed;2;7.4;2;nietvers;0;9.8;1;1.11;1;8.5;0;1;0;1;0;129;Aldi (Arnhem);Kronenburgpassage 124 - Arnhem
+117;217;68;Zeer goed;1;Bedorven;4;Matig;3;8.1;2;nietvers;0;11.2;2;1.24;1;7.5;0;1;0;1;1;142;Aldi (Zevenaar);Muldershof 35 - Zevenaar
+84;185;79;Voldoende;2;Sterk;3;Matig;3;9.5;2;vers;1;12.9;2;3.16;2;12;0;1;0;1;0;99;Arie Haring;Langsom 5 - Amsterdam
+35;66;57;Goed;1;Bedorven;4;Slecht;4;12.5;3;nietvers;0;9.4;1;3.07;2;7.5;0;1;0;0;1;145;Arie’s Visboetiek;Leyweg 183 - Den Haag
+90;194;63;Zeer goed;1;Sterk;3;Slecht;4;9.9;2;nietvers;0;13.6;2;3.38;2;7.5;0;1;0;1;0;138;Backus aan de Grens Visspecialiteiten;Herungerberg 417 - Venlo
+64;149;76;Zeer goed;1;Sterk;3;Matig;3;7.4;2;vers;1;14.1;3;2.63;1;12;0;1;0;1;0;96;Bal Vismeesters;Maximastraat 12 - Nijverdal
+106;226;66;Zeer goed;1;Gemiddeld;2;Goed;2;6.8;1;vers;1;14.8;3;3.78;3;15;0;1;0;1;0;61;Balk Visch aan het Spaarne;Friese Varkenmarkt 13a - Haarlem
+55;94;59;Zeer goed;1;Licht;1;Zeer goed;1;6.3;1;vers;1;13.4;2;3.38;2;16.5;0;1;0;1;1;12;Bartje’s Vis;Deldensestraat 31 - Almelo
+65;150;71;Zeer goed;1;Gemiddeld;2;Zeer goed;1;-0.8;1;vers;1;15.1;3;2.81;1;16;0;1;0;1;0;28;Bartje’s Vis;Deldensestraat 31 - Almelo
+57;135;61;Goed;1;Gemiddeld;2;Zeer goed;1;6.4;1;vers;1;13.4;2;3.27;2;15;0;1;0;1;0;60;Bert Zwier;Verkoopwagen Vismarkt - Groningen
+135;272;69;Zeer goed;1;Bedorven;4;Goed;2;2.5;1;nietvers;0;9;1;1.8;1;7.5;0;1;0;1;0;139;Boni;Noordbargerstraat 5 - Emmen
+87;190;64;Zeer goed;1;Licht;1;Zeer goed;1;5.6;1;vers;1;13.1;2;3.51;3;15;0;1;0;1;0;57;Bram & Aaltje;Verkoopwagen dagmarkt dinsdag Brink - Baarn
+41;76;58;Goed;1;Sterk;3;Goed;2;6.3;1;nietvers;0;12.5;2;3.44;2;13.5;0;1;0;1;1;85;Bram van Diermen World of Fresh Fish;Verkoopwagen dagmarkt woensdag Voorstraat - Vianen
+114;238;71;Goed;1;Gemiddeld;2;Zeer goed;1;6.3;1;vers;1;11.5;2;3.16;2;16;0;1;0;1;0;35;Buurman Vis;Stationsstraat 8 - Twello
+51;121;56;Zeer goed;1;Sterk;3;Matig;3;8.9;2;vers;1;14.2;3;3.57;3;13;0;1;0;1;0;83;Cash & Carry visbedrijf Toet;Gildeweg 6 - Vlissingen
+14;24;45;Zeer goed;1;Sterk;3;Goed;2;2.3;1;nietvers;0;7.9;1;3.32;2;9.5;0;1;0;0;1;125;Coop Hof van Delft;Hof van Delftlaan 69-75 - Delft
+50;87;75;Zeer goed;1;Gemiddeld;2;Goed;2;6.8;1;nietvers;0;10.6;2;3.33;2;15;0;1;0;1;1;60;Corrie’s Visstekje;Vincent van Goghstraat 15 - Nuenen
+101;218;57;Zeer goed;1;Gemiddeld;2;Matig;3;8.6;2;vers;1;11.1;2;3.5;3;14.5;0;1;0;0;0;66;Dagkraam;Bentinckplein - Rotterdam
+91;196;60;Zeer goed;1;Licht;1;Zeer goed;1;9.1;2;vers;1;16;3;3.33;2;13.5;0;1;0;0;0;81;Dagkraam Alex de Lat;Verkooppunt bij Puccinipassage - Capelle aan den IJssel
+83;184;58;Zeer goed;1;Gemiddeld;2;Goed;2;6.3;1;vers;1;11;2;3.44;2;12.5;0;1;0;0;0;92;dagkraam Monique Vermeer;Groene Hilledijk / Heilantstraat - Rotterdam
+68;118;72;Slecht;3;Groen;1;Goed;2;-1.8;1;vers;1;15.9;3;3.04;2;15;0;1;0;1;1;48;De Graaf Fish;Rompertpassage 53 - ’s-Hertogenbosch
+123;256;69;Zeer goed;1;Gemiddeld;2;Zeer goed;1;3.3;1;vers;1;15.7;3;3.26;2;16;0;1;0;1;0;30;De Graaf's Visspecialiteiten;Westwal 6 - Leerdam
+12;22;73;Zeer goed;1;Licht;1;Zeer goed;1;4.6;1;vers;1;10.3;2;3.21;2;17.2;1;0;0;1;1;4;De Graaf’s Visspecialiteiten;Westwal 6 - Leerdam
+126;245;66;Goed;1;Sterk;3;Zeer goed;1;5.7;1;vers;1;14.7;3;3.33;2;15.5;0;1;0;1;1;44;De Jong Visspecialist;Utrechtsestraat 50 - IJsselstein
+70;120;76;Zeer goed;1;Gemiddeld;2;Matig;3;6;1;nietvers;0;9.9;1;1.97;1;15;0;1;0;1;1;57;De Jongens van de Fant;Breehorn 2 - Urk
+56;95;69;Waarschuwingsfase;4;Sterk;3;Matig;3;5.5;1;vers;1;13.4;2;2.89;2;14.5;0;1;0;1;1;62;De Lemster Vishal;Kortestreek 3 - Lemmer
+106;199;54;Zeer goed;1;Sterk;3;Matig;3;8.2;2;nietvers;0;8.6;1;4.16;3;7.5;0;1;0;1;1;137;De Spakenburgse Visspecialist;Verkoopwagen Landbouwstraat - Winterswijk
+4;11;62;Zeer goed;1;Gemiddeld;2;Matig;3;3.9;1;vers;1;12.4;2;3.22;2;13.5;0;1;0;0;0;82;De Visarend;Schoolstraat 73 - Voorschoten
+85;186;65;Zeer goed;1;Gemiddeld;2;Zeer goed;1;9.1;2;vers;1;15.1;3;3.07;2;15;0;1;0;1;0;52;De Visfuik;De Millystraat 9 - Zuidlaren
+121;227;61;Zeer goed;1;Gemiddeld;2;Zeer goed;1;6.3;1;vers;1;10.8;2;3.27;2;15.5;0;1;0;1;1;46;De Visfuik;De Millystraat 9 - Zuidlaren
+59;139;60;Zeer goed;1;Gemiddeld;2;Goed;2;7.9;2;nietvers;0;12.8;2;4.58;3;12;0;1;0;1;0;97;De Visscherie;Galerij 1 - Uden
+102;219;69;Voldoende;2;Bedorven;4;Zeer goed;1;13.9;3;nietvers;0;10.1;2;2.53;1;7.5;0;1;0;0;0;143;De Viswinkel;Noordvliet Noordzijde 3 - Maassluis
+83;144;62;Goed;1;Sterk;3;Matig;3;15.1;3;nietvers;0;12.3;2;3.49;3;8;0;1;0;1;1;135;De Viszaak;Traaij 6 - Driebergen
+100;216;60;Zeer goed;1;Sterk;3;Matig;3;10.3;3;vers;1;8.4;1;5;3;7.5;0;1;0;1;0;136;De Zilte Zee vis en delicatessen;Kampweg 24 - Doorn
+78;178;62;Zeer goed;1;Gemiddeld;2;Zeer goed;1;2.7;1;vers;1;15.8;3;3.14;2;16;0;1;0;1;0;29;Dirks Vishandel;Hoornesplein 129 - Katwijk aan Zee
+96;205;61;Zeer goed;1;Gemiddeld;2;Goed;2;10.8;3;nietvers;0;14.7;3;2.86;2;14;0;1;0;1;0;72;Dries van den Berg;Burgemeester De Meesterstraat 11 - Harderwijk
+5;8;73;Waarschuwingsfase;4;Bedorven;4;Matig;3;8.2;2;nietvers;0;10.7;2;1.28;1;7.5;0;1;0;0;1;143;EM-TÉ (Dordrecht);Krispijnseweg 68 - Dordrecht
+18;40;62;Goed;1;Sterk;3;Goed;2;4.8;1;nietvers;0;11.5;2;1.61;1;8.5;0;1;0;1;0;131;EMTE (Den Bosch);Hofvijver 2 - s-Hertogenbosch
+69;119;68;Zeer goed;1;Sterk;3;Slecht;4;7.9;2;nietvers;0;9.1;1;3.3;2;9;0;1;0;1;1;130;Enkhuizer Vishal;Tussen Twee Havens 7 - Enkhuizen
+3;5;71;Slecht;3;Bedorven;4;Matig;3;18.9;3;nietvers;0;9;1;2.81;1;7.5;0;1;0;1;1;146;Erasmus Viscenter;Kaai 1 - Breskens
+100;177;66;Slecht;3;Sterk;3;Goed;2;14.8;3;nietvers;0;9;1;2.65;1;8.5;0;1;0;1;1;132;Fieret’s Vishandel;Kaai 18 - Sluis
+68;158;79;Goed;1;Gemiddeld;2;Zeer goed;1;6.1;1;vers;1;11.3;2;2.91;2;16.5;0;1;0;1;0;25;Fijnvishandel Santpoort aan Zee;Broekbergenlaan 44 - Santpoort
+134;257;79;Zeer goed;1;Gemiddeld;2;Zeer goed;1;6.2;1;vers;1;9.6;1;3.03;2;16;0;1;0;1;1;33;Fijnvishandel Santpoort aan Zee;Broekbergenlaan 44 - Santpoort
+9;17;71;Zeer goed;1;Sterk;3;Matig;3;7.8;2;vers;1;13.8;2;2.74;1;14;0;1;0;1;0;75;Fish & Chips;Markt 39 - Middelburg
+44;102;77;Zeer goed;1;Sterk;3;Goed;2;4.1;1;vers;1;15.4;3;2.53;1;14.5;0;1;0;1;0;67;Fish Plaza;Gochsedijk 96 - Siebengewald
+40;97;63;Zeer goed;1;Gemiddeld;2;Zeer goed;1;6.8;1;vers;1;12.1;2;3.3;2;15.5;0;1;0;0;0;48;Fizzi;Noorderkeerkring 14 - Alphen aan den Rijn
+36;67;62;Zeer goed;1;Gemiddeld;2;Goed;2;6.4;1;vers;1;9.3;1;4.35;3;14;0;1;0;1;1;80;Gamba Seafood;Jansstraat 31 - Arnhem
+12;29;64;Zeer goed;1;Gemiddeld;2;Zeer goed;1;5.6;1;vers;1;12.6;2;3.43;2;16.5;0;1;0;0;0;24;Grootveld Visspecialiteiten;Koningin Julianaplein 267a - Voorburg
+103;220;73;Zeer goed;1;Sterk;3;Goed;2;4.7;1;nietvers;0;16.1;3;3.42;2;13;0;1;0;1;0;87;Haring Naatje;Purmerplein - Amsterdam
+14;33;75;Waarschuwingsfase;4;Sterk;3;Goed;2;8.9;2;vers;1;14.5;3;3.33;2;14.5;0;1;0;1;0;63;Haringkraam Miep Hoeben;Stationsstraat / Smallepad - Bergen aan Zee
+137;271;63;Goed;1;Gemiddeld;2;Matig;3;9.4;2;vers;1;7;1;2.85;2;13.5;0;1;0;0;1;84;Haringshop Eudokiaplein;Eudokiaplein - Rotterdam
+23;51;56;Zeer goed;1;Gemiddeld;2;Zeer goed;1;8.3;2;vers;1;8;1;3.48;3;15.5;0;1;0;1;0;41;Heeren van de Zee;Verkoopwagen zaterdag bij winkelcentrum Rijkerswoerd - Arnhem
+123;233;65;Zeer goed;1;Gemiddeld;2;Goed;2;8.6;2;vers;1;10.1;2;3.38;2;16;0;1;0;1;1;27;Het Beste Maatje;Stationsstraat 1 a - Middelburg
+133;254;72;Zeer goed;1;Gemiddeld;2;Zeer goed;1;8.2;2;nietvers;0;12.7;2;3.12;2;10.5;0;1;0;1;1;118;Het Neusje van de Zalm (Heerenveen);Molenplein 12 - Heerenveen
+103;189;80;Voldoende;2;Sterk;3;Zeer goed;1;16.5;3;nietvers;0;12.5;2;2.81;1;10.5;0;1;0;1;1;120;Het Neusje van de Zalm (Leeuwaarden);Verkoopwagen parkeerplaats AH Tijnjeplein - Leeuwarden
+81;142;63;Zeer goed;1;Gemiddeld;2;Zeer goed;1;7.6;2;nietvers;0;8.2;1;3.57;3;15;0;1;0;1;1;51;Het Vishuis;Grotestraat 2 - Ede
+99;212;75;Zeer goed;1;Sterk;3;Goed;2;12.7;3;vers;1;11.9;2;2.93;2;13.5;0;1;0;1;0;79;Het Vispaleis;Noorderveemarkt 3 - Hoorn
+62;109;51;Zeer goed;1;Gemiddeld;2;Zeer goed;1;9.7;2;vers;1;9.5;1;4.6;3;15.5;0;1;0;1;1;38;Het Vispleintje;Sint Annaplein 11 - Baarle-Nassau
+11;27;76;Zeer goed;1;Sterk;3;Matig;3;8.9;2;vers;1;12.8;2;2.63;1;14;0;1;0;1;0;76;Hollander's Nieuwe;Drachtsterweg 7 - Leeuwarden
+76;130;85;Zeer goed;1;Gemiddeld;2;Goed;2;5.8;1;vers;1;12.4;2;2.47;1;14.5;0;1;0;1;1;68;Hopman’s Zeevishandel;Verkoopwagen dagmarkt donderdag centrum - Lopik
+54;129;63;Zeer goed;1;Bedorven;4;Goed;2;8.5;2;nietvers;0;11.7;2;1.17;1;7.5;0;1;0;1;0;141;Jumbo (Hoogezand);Meint Veningastraat 26 - Hoogezand
+41;98;59;Zeer goed;1;Bedorven;4;Goed;2;2.6;1;nietvers;0;11.1;2;1.93;1;7.5;0;1;0;0;0;140;Jumbo (Reeuwijk);Miereakker 18 - Reeuwijk
+118;221;65;Voldoende;2;Sterk;3;Goed;2;8.6;2;nietvers;0;8.7;1;2.07;1;10;0;1;0;0;1;122;Jumbo (Spijkenisse);Hadewychplaats 32 - Spijkenisse
+112;235;55;Zeer goed;1;Gemiddeld;2;Zeer goed;1;8.5;2;vers;1;9.3;1;3.45;2;13;0;1;0;0;0;85;Kapitein Jack;Thorbeckelaan/Colijnplein - Den Haag
+89;192;59;Zeer goed;1;Sterk;3;Matig;3;6.1;1;vers;1;14.1;3;3.81;3;10.5;0;1;0;1;0;113;Konink Vis;Talingweg 171 - Apeldoorn
+81;181;62;Zeer goed;1;Sterk;3;Matig;3;12.6;3;nietvers;0;9.3;1;3.22;2;8.5;0;1;0;0;0;128;Kraam van Kralingen;Watertorenweg - Rotterdam
+109;230;67;Zeer goed;1;Gemiddeld;2;Zeer goed;1;6.6;1;vers;1;9.8;1;2.76;1;16;0;1;0;0;0;36;Langouste;Winterakker 27 - Spijkenisse
+70;163;57;Goed;1;Gemiddeld;2;Zeer goed;1;1.6;1;vers;1;16.3;3;3.94;3;16.7;0;1;0;0;0;11;Lekkerkerkse Vishandel W. Verwaal;Dagmarkt vrijdag Hoofdstraat - Krimpen aan den Lek
+69;160;67;Slecht;3;Sterk;3;Matig;3;4.1;1;nietvers;0;14.4;3;1.18;1;9.5;0;1;0;1;0;115;Lidl (Deurne);Vlierdenseweg 4 - Deurne
+110;206;61;Afgekeurd;5;Bedorven;4;Matig;3;5.2;1;nietvers;0;9.3;1;2.04;1;7.5;0;1;0;1;1;147;Lidl (Goes);De Spinne 46 - Goes
+129;264;58;Waarschuwingsfase;4;Sterk;3;Matig;3;7.1;2;vers;1;15.5;3;3.79;3;12.5;0;1;0;1;0;89;Lindsey's Visspeciaalzaak;Veldpoortstraat 12 - Wijk bij Duurstede
+113;210;71;Goed;1;Gemiddeld;2;Zeer goed;1;6.9;1;vers;1;14.2;3;3.09;2;16;0;1;0;1;1;34;Lindsey’s Visspeciaalzaak;Veldpoortstraat 12 - Wijk bij Duurstede
+146;289;65;Zeer goed;1;Gemiddeld;2;Zeer goed;1;2.9;1;nietvers;0;12.9;2;3.89;3;15;0;1;1;0;1;53;LKKR;Tsjaikovskistraat 1 - Rhoon
+85;146;63;Zeer goed;1;Gemiddeld;2;Zeer goed;1;-1.9;1;vers;1;13.1;2;2.94;2;16.7;1;0;0;0;1;9;M.J. de Graaf Fishmasters;Verkoopwagen parkeerterrein winkelcentrum Walburg - Zwijndrecht
+94;200;69;Afkeurenswaardig;5;Sterk;3;Matig;3;15.8;3;nietvers;0;15;3;3.26;2;7.5;0;1;0;0;0;135;Marcel Korlaar/Zuyderzee;Vrijdagdagmarkt Binnenhof - Barendrecht
+124;259;76;Zeer goed;1;Gemiddeld;2;Matig;3;10.4;3;vers;1;9.2;1;2.61;1;11.5;0;1;0;1;0;105;Marqt;Ceintuurbaan 402 - Amsterdam
+145;287;76;Goed;1;Licht;1;Zeer goed;1;4.7;1;nietvers;0;11.4;2;2.1;1;15.5;0;1;1;0;1;35;Mediterranee;Vierambachtstraat 135 - Rotterdam
+55;131;67;Zeer goed;1;Gemiddeld;2;Matig;3;5.7;1;vers;1;10.8;2;2.98;2;15;0;1;0;0;0;58;Mercan's Place;Monseigneur Nolenslaan 420 - Schiedam
+31;55;48;Zeer goed;1;Sterk;3;Matig;3;9.9;2;vers;1;8.3;1;3.64;3;9;0;1;0;1;1;131;Oppidium Heinen Vis;Groningerstraat 166 - Amersfoort
+46;105;61;Zeer goed;1;Sterk;3;Zeer goed;1;5.1;1;nietvers;0;16.8;3;1.22;1;10.5;0;1;0;1;0;112;Plus;Botter 4431 - Lelystad
+89;156;63;Zeer goed;1;Bedorven;4;Matig;3;3.8;1;nietvers;0;5.4;1;2.37;1;7.5;0;1;0;0;1;139;Plus Wensveen;Dorrestein 21 - Nieuwerkerk a/d IJssel
+131;266;79;Waarschuwingsfase;4;Sterk;3;Goed;2;9.1;2;nietvers;0;6.2;1;2.34;1;11.5;0;1;0;1;0;103;Poisson & Cuisine De Molen;Meester Snijderweg 55 - Stellendam
+88;154;63;Zeer goed;1;Gemiddeld;2;Zeer goed;1;3.8;1;vers;1;11.6;2;3.57;3;16.3;0;1;0;0;1;22;puurvis;Damlaan 69 a - Leidschendam
+25;46;63;Goed;1;Sterk;3;Zeer goed;1;10.2;3;nietvers;0;10;2;3.33;2;12.5;0;1;0;0;1;97;Rene’s Visspeciaalzaak;Herenhof 34 - Alphen a/d Rijn
+42;77;71;Zeer goed;1;Gemiddeld;2;Goed;2;8.9;2;nietvers;0;12.2;2;2.46;1;15.5;0;1;0;0;1;37;Roeleveld Vis;Visafslagweg 30 - Den Haag
+120;224;87;Afgekeurd;5;Bedorven;4;Goed;2;11.1;3;nietvers;0;6.9;1;2.58;1;7.5;0;1;0;0;1;148;Ruisvis;Verkoopwagen dagmarkt vrijdag Statenplein - Dordrecht
+144;290;73;Zeer goed;1;Gemiddeld;2;Zeer goed;1;1.5;1;vers;1;1.3;1;3.42;2;17;1;0;1;0;0;5;Schmidt Zeevis;Matlingeweg 333 - Rotterdam
+148;292;72;Zeer goed;1;Gemiddeld;2;Zeer goed;1;1.9;1;vers;1;13.4;2;3.47;2;17;1;0;1;0;1;6;Schmidt Zeevis;Matlingeweg 333 - Rotterdam
+67;155;61;Voldoende;2;Sterk;3;Zeer goed;1;14.2;3;nietvers;0;14.1;3;2.86;2;9.5;0;1;0;0;0;119;SeaZo Visspecialiteiten;Molenbrink 50 - Monster
+43;78;54;Zeer goed;1;Gemiddeld;2;Goed;2;5.5;1;vers;1;14.4;3;3.61;3;15;0;1;0;1;1;55;Seven Seas Seafood;Zamenhofdreef 75 - Utrecht
+21;45;69;Goed;1;Sterk;3;Goed;2;11.4;3;nietvers;0;13.4;2;3.62;3;9.5;0;1;0;1;0;118;Simonse Visspecialiteiten;Walstraat 2a - Oss
+48;110;74;Zeer goed;1;Gemiddeld;2;Matig;3;5.1;1;vers;1;11.1;2;2.83;1;14.5;0;1;0;1;0;69;Smit V'dammer Vishandel Tussenmeer;Tussen Meer 67 - Amsterdam
+52;123;62;Zeer goed;1;Sterk;3;Goed;2;7.9;2;nietvers;0;7.5;1;3.38;2;11.5;0;1;0;1;0;106;Spakenburgse Vishandel;De Eglantier 342 - Apeldoorn
+38;88;70;Zeer goed;1;Gemiddeld;2;Zeer goed;1;4.7;1;vers;1;17.4;3;3.21;2;16.5;0;1;0;1;0;22;Spakenburgse Vishandel H.C.de Graaf;Kruisstraat 6 - Woerden
+132;268;53;Goed;1;Gemiddeld;2;Matig;3;10.3;3;nietvers;0;11;2;4.15;3;9.5;0;1;0;1;0;121;Spakenburgse Vishandel Vathorst;Cruquius 98 - Amersfoort
+17;28;61;Zeer goed;1;Licht;1;Zeer goed;1;5.1;1;vers;1;7.5;1;3.68;3;15.5;0;1;0;1;1;43;Spakenburgse Visspecialist Arjan Pastoor;Molenstraat 21 - Rhenen
+130;265;52;Zeer goed;1;Sterk;3;Matig;3;10.8;3;nietvers;0;7.6;1;4.8;3;7.5;0;1;0;0;0;137;t Visboertje;Kraam Bergse Dorpsstraat /Argonautenweg - Rotterdam
+56;132;51;Goed;1;Gemiddeld;2;Zeer goed;1;5.3;1;vers;1;14.3;3;3.82;3;15.5;0;1;0;1;0;47;Ten Have's viswinkel;Achterstraat 4 - Hattem
+72;125;59;Zeer goed;1;Licht;1;Matig;3;6.8;1;vers;1;10.7;2;3.38;2;15;0;1;0;1;1;61;The Fishery;Doctor Slotemaker De Bruïneplein - Veenendaal
+3;7;73;Zeer goed;1;Sterk;3;Matig;3;8;2;vers;1;13.6;2;2.73;1;13.5;0;1;0;1;0;80;The Haddock Fish & Chips;Nieuwe Oosterstraat 1e - Leeuwarden
+6;9;79;Voldoende;2;Gemiddeld;2;Zeer goed;1;10.3;3;vers;1;11.2;2;3.79;3;14;0;1;0;1;1;73;Tijger & De Vis;Lindengracht 158 h - Amsterdam
+54;93;75;Zeer goed;1;Sterk;3;Goed;2;4.8;1;vers;1;13;2;3.66;3;15;0;1;0;0;1;54;Toet Visspecialiteiten;Herenstraat 60 - Voorburg
+79;137;73;Waarschuwingsfase;4;Gemiddeld;2;Matig;3;10.6;3;vers;1;13.3;2;2.73;1;13;0;1;0;1;1;87;Urker Vis en meer;Kleine Kerkstraat 1 - Leeuwarden
+9;18;67;Zeer goed;1;Gemiddeld;2;Zeer goed;1;6.7;1;vers;1;12;2;2.98;2;16.5;0;1;0;1;1;13;Urker Vishandel Van Slooten;Slotplantsoen 3 - Meppel
+80;180;70;Zeer goed;1;Sterk;3;Matig;3;11.6;3;vers;1;13.4;2;2.85;2;12;0;1;0;1;0;94;Urker Visspecialist de Snoekies;Sint Adriaanstraat 17 - Goes
+135;258;82;Zeer goed;1;Gemiddeld;2;Matig;3;6.1;1;nietvers;0;10;2;2.71;1;13;0;1;0;1;1;93;Urker Visspecialiteiten Baarssen;Noorderwagenplein 10 - Lelystad
+39;89;68;Zeer goed;1;Gemiddeld;2;Zeer goed;1;10.6;3;nietvers;0;16.7;3;2.57;1;12.5;0;1;0;0;0;91;Valk Versmarkt;Veurseweg 214 - Voorschoten
+28;49;74;Zeer goed;1;Gemiddeld;2;Zeer goed;1;14.2;3;vers;1;12.5;2;4.05;3;12.5;0;1;0;1;1;99;Van Altena Seafood;Amstelveenseweg/hoek Kalfjeslaan - Amsterdam
+26;47;68;Voldoende;2;Gemiddeld;2;Zeer goed;1;8.9;2;vers;1;10.9;2;3.23;2;14;0;1;0;1;1;72;Van Arenthals Vishandel Kees;Geert Groteplein 11 - Alkmaar
+60;106;67;Zeer goed;1;Gemiddeld;2;Zeer goed;1;3.4;1;vers;1;13.9;2;2.98;2;15.5;0;1;0;0;1;41;Van den Boogaart Visspecialiteiten;Hof van Holland 24 - Zwijndrecht
+110;232;66;Goed;1;Gemiddeld;2;Zeer goed;1;4.6;1;vers;1;13.3;2;3.03;2;16;0;1;0;0;0;33;Van den Boogaart Visspecialiteiten;Hof van Holland 24 - Zwijndrecht
+64;112;67;Zeer goed;1;Gemiddeld;2;Zeer goed;1;9.5;2;nietvers;0;10.3;2;2.76;1;14.5;0;1;0;1;1;64;Van der Zwan Vistotaal;Kerkeveldlaan 14 - Roermond
+32;69;57;Zeer goed;1;Sterk;3;Zeer goed;1;4.7;1;nietvers;0;8.6;1;3.94;3;12;0;1;0;0;0;100;Vis & traiteur Jeroen Vijverberg;Rembrandstraat 1b - Naaldwijk
+15;25;56;Goed;1;Sterk;3;Slecht;4;16.4;3;vers;1;9.1;1;4.01;3;9.5;0;1;0;1;1;124;Vis & Zoer;Geldersestraat 42 - Geldermalsen
+20;35;65;Voldoende;2;Gemiddeld;2;Goed;2;14.5;3;nietvers;0;9.1;1;3.46;2;11;0;1;0;1;1;113;Vis Enzo;Tongelresestraat 270 a - Eindhoven
+130;250;58;Goed;1;Sterk;3;Matig;3;12.6;3;vers;1;9.2;1;3.36;2;11;0;1;0;0;1;112;Vis Expo;Nieuwstraat 22 - Middelharnis
+65;113;53;Zeer goed;1;Licht;1;Zeer goed;1;12.1;3;nietvers;0;15.8;3;4.24;3;15;0;1;0;0;1;49;Vis van Klaas;Verkoopwagen Damplein - Dordrecht
+99;176;61;Goed;1;Bedorven;4;Matig;3;9.2;2;nietvers;0;10.2;2;3.27;2;7.5;0;1;0;0;1;144;Vis van Lon;Dorpsstraat 101 - Zoetermeer
+139;279;62;Zeer goed;1;Gemiddeld;2;Zeer goed;1;5.3;1;vers;1;13.9;2;3.62;3;16.5;0;1;1;0;0;23;Vis.;Lange Baan 34 - Nootdorp
+144;284;71;Zeer goed;1;Gemiddeld;2;Zeer goed;1;3.1;1;vers;1;12.6;2;3.16;2;16.3;0;1;1;0;1;20;Vis.;Lange Baan 34 - Nootdorp
+63;111;72;Zeer goed;1;Gemiddeld;2;Zeer goed;1;8.4;2;vers;1;15.4;3;2.7;1;15.5;0;1;0;1;1;36;Visamy;Bellamypark 44 - Vlissingen
+86;188;56;Zeer goed;1;Gemiddeld;2;Matig;3;4.3;1;vers;1;7.1;1;3.48;3;14;0;1;0;0;0;77;Visboetiek Emous;Dirk de Derdelaan 1a - Vlaardingen
+98;174;80;Zeer goed;1;Gemiddeld;2;Zeer goed;1;-2.1;1;vers;1;18.4;3;2.62;1;15.5;0;1;0;1;1;39;Viscircus Gebr. Koning;Schippergarage 23 - Almere
+82;182;69;Slecht;3;Gemiddeld;2;Zeer goed;1;2.8;1;vers;1;12;2;3.04;2;15;0;1;0;1;0;49;Viscircus gebroeders Koning;Belfort 128 - Almere
+37;84;57;Zeer goed;1;Gemiddeld;2;Zeer goed;1;6.8;1;vers;1;10.5;2;3.5;3;16.5;0;1;0;0;0;26;Visgilde Bieshof;Van Eesterenplein 96 - Dordrecht
+142;282;75;Zeer goed;1;Gemiddeld;2;Zeer goed;1;2.7;1;vers;1;13.7;2;2.8;1;17.4;1;0;1;1;1;2;Visgilde De Zeeland;Markiezaatsweg 11 b - Bergen op Zoom
+67;116;64;Zeer goed;1;Gemiddeld;2;Goed;2;3.6;1;nietvers;0;7.8;1;4.29;3;9.5;0;1;0;1;1;126;Visgilde François de Bie;Roostenlaan 67 - Eindhoven
+137;276;63;Zeer goed;1;Gemiddeld;2;Zeer goed;1;4.1;1;vers;1;10.6;2;3.49;3;17;1;0;1;0;0;7;Visgilde Gebroeders De Block;Raadhuisplein 57a - Krimpen aan den IJssel
+19;42;66;Zeer goed;1;Gemiddeld;2;Zeer goed;1;3.6;1;vers;1;11.9;2;3.18;2;16;0;1;0;1;0;38;Visgilde Hans Visscher;Melkmarkt 32 - Zwolle
+136;267;64;Zeer goed;1;Gemiddeld;2;Zeer goed;1;5.4;1;vers;1;10.8;2;3.12;2;16.3;0;1;0;0;1;24;Visgilde John Vermaas;Mia van IJperenplein 101 - Rotterdam
+84;145;64;Slecht;3;Gemiddeld;2;Zeer goed;1;6.8;1;vers;1;10.2;2;3.51;3;15.3;0;1;0;0;1;26;Visgilde Leen de Jong;Middenbaan 73 - Barendrecht
+36;79;80;Zeer goed;1;Gemiddeld;2;Zeer goed;1;3.2;1;vers;1;16.4;3;2.81;1;15;0;1;0;1;0;55;Visgilde Lijffijt & De Jong;Biltstraat 50 - Utrecht
+95;168;81;Goed;1;Gemiddeld;2;Zeer goed;1;0.3;1;vers;1;9.2;1;2.77;1;16.3;0;1;0;1;1;15;Visgilde Lijffijt & De Jong;Biltstraat 50 - Utrecht
+138;278;58;Goed;1;Gemiddeld;2;Zeer goed;1;1.5;1;vers;1;14.6;3;3.62;3;17;1;0;1;1;0;6;Visgilde Oosterschelde;Lombardenstraat 2 - Bergen op Zoom
+121;252;64;Zeer goed;1;Gemiddeld;2;Goed;2;8.6;2;vers;1;12.2;2;3.51;3;12;0;1;0;1;0;98;Visgilde Rijsemus;Kamperfoelielaan 55-57 - Ede
+51;90;64;Zeer goed;1;Gemiddeld;2;Zeer goed;1;6.2;1;nietvers;0;11.8;2;3.12;2;15;0;1;0;0;1;59;Visgilde Schot;Jan van Goijenstraat 6 - Papendrecht
+109;204;67;Goed;1;Gemiddeld;2;Zeer goed;1;0.9;1;vers;1;9.8;1;3.13;2;16.3;0;1;0;0;1;17;Visgilde Steehouwer;De Schoof 80 - Hendrik-Ido-Ambacht
+105;225;68;Zeer goed;1;Gemiddeld;2;Zeer goed;1;2.8;1;vers;1;16.5;3;3.08;2;16.5;0;1;0;0;0;14;Visgilde Steehouwer;De Schoof 80 - Hendrik-Ido-Ambacht
+24;44;67;Zeer goed;1;Gemiddeld;2;Zeer goed;1;2.9;1;vers;1;12.2;2;3.35;2;16.3;0;1;0;0;1;18;Visgilde Teun van der Toorn;Doortocht 3b - Bodegraven
+26;57;63;Zeer goed;1;Gemiddeld;2;Zeer goed;1;2.6;1;vers;1;12;2;3.3;2;16.5;0;1;0;0;0;15;Visgilde Teun van der Toorn;Doortocht 3b - Bodegraven
+117;241;59;Goed;1;Gemiddeld;2;Goed;2;8.1;2;nietvers;0;10.2;2;3.38;2;11.5;0;1;0;0;0;107;Vishandel 't Hoogertje;Kuipersstraat 45 - Vlaardingen
+131;251;65;Zeer goed;1;Sterk;3;Matig;3;11.9;3;nietvers;0;10.8;2;2.69;1;8;0;1;0;0;1;133;Vishandel ‘de Goeie Ouwe Tijd’;De Loper 81 - Vlaardingen
+21;37;66;Zeer goed;1;Gemiddeld;2;Matig;3;12.9;3;vers;1;8.7;1;3.03;2;11;0;1;0;1;1;110;Vishandel ’t Dolfijntje;Ring 5 - Burgh-Haamstede
+107;202;61;Waarschuwingsfase;4;Gemiddeld;2;Matig;3;12.2;3;vers;1;11.4;2;3.68;3;9.5;0;1;0;1;1;123;Vishandel Adrie;Verkoopwagen Vogelplein - Amersfoort
+7;15;65;Zeer goed;1;Sterk;3;Matig;3;4.7;1;vers;1;13.7;2;2.84;2;14.5;0;1;0;0;0;68;Vishandel Andaluce;Eerste Middellandstraat 21b - Rotterdam
+33;59;66;Waarschuwingsfase;4;Gemiddeld;2;Goed;2;13.4;3;nietvers;0;8.1;1;3.78;3;13;0;1;0;1;1;88;Vishandel Anita;Textielplein 34 - Tilburg
+141;280;72;Zeer goed;1;Licht;1;Goed;2;2;1;vers;1;12.5;2;2.22;1;16.3;0;1;1;0;1;14;Vishandel Atlantic;Levendaal 118 - Leiden
+142;286;66;Zeer goed;1;Gemiddeld;2;Zeer goed;1;2;1;vers;1;13.5;2;2.65;1;17.3;1;0;1;0;0;2;Vishandel Atlantic;Levendaal 118 - Leiden
+133;269;65;Zeer goed;1;Sterk;3;Matig;3;7.2;2;vers;1;16.5;3;3;2;12;0;1;0;1;0;95;Vishandel Ben van Doesburg;Franciscusdreef 47 - Utrecht
+17;39;65;Zeer goed;1;Gemiddeld;2;Zeer goed;1;3.2;1;vers;1;15.5;3;3.07;2;15.5;0;1;0;1;0;44;Vishandel Bert Blokhuis;Verkoopwagen zaterdag parkeerterrein Lage Engweg - Putten
+72;166;54;Voldoende;2;Sterk;3;Slecht;4;13;3;nietvers;0;13.4;2;2.74;1;8;0;1;0;1;0;132;Vishandel Bettina Krol;Hinthamereinde 73 - s-Hertogenbosch
+114;213;69;Zeer goed;1;Sterk;3;Slecht;4;7.2;2;nietvers;0;7.7;1;2.53;1;9;0;1;0;0;1;129;Vishandel Bezuidenhout;Theresiastraat 163 - Den Haag
+32;58;80;Waarschuwingsfase;4;Gemiddeld;2;Goed;2;9.9;2;nietvers;0;11.2;2;2.75;1;13;0;1;0;1;1;89;Vishandel Boels;Menistenplein 1 - Stadskanaal
+46;82;65;Zeer goed;1;Sterk;3;Slecht;4;8.3;2;nietvers;0;7.2;1;3.07;2;13;0;1;0;1;1;92;Vishandel Buter;Verkoopwagen Wittesteijn - Emmeloord
+113;237;61;Waarschuwingsfase;4;Sterk;3;Goed;2;7.5;2;nietvers;0;8.4;1;2.86;2;8.5;0;1;0;1;0;126;Vishandel Cor Bosman;Donderdagmarkt - Middelburg
+15;34;62;Zeer goed;1;Gemiddeld;2;Zeer goed;1;2.9;1;vers;1;12.7;2;3.22;2;15;0;1;0;1;0;54;Vishandel De Klok;Herenstraat 43 - Voorhout
+104;193;63;Goed;1;Gemiddeld;2;Goed;2;13.8;3;vers;1;8.7;1;3.17;2;12.5;0;1;0;1;1;98;Vishandel De Lekkerbek;Verkoopwagen Grote Beer - Hoogeveen
+61;141;62;Goed;1;Sterk;3;Matig;3;4.3;1;nietvers;0;10.5;2;3.62;3;10.5;0;1;0;1;0;111;Vishandel De Vakman;Kronenburgpassage 68 - Arnhem
+8;14;77;Zeer goed;1;Gemiddeld;2;Goed;2;12.9;3;nietvers;0;9.4;1;3.24;2;14;0;1;0;1;1;71;Vishandel De Zeemeeuw;Meeuwenlaan 136 - Amsterdam
+58;100;69;Zeer goed;1;Gemiddeld;2;Goed;2;6.1;1;vers;1;11.1;2;2.89;2;15;0;1;0;1;1;58;Vishandel E. Fieret;Verkoopwagen Plein 1940 - Scherpenzeel
+107;228;72;Voldoende;2;Gemiddeld;2;Zeer goed;1;7.3;2;vers;1;15.4;3;2.7;1;15.5;0;1;0;1;0;39;Vishandel Eddy;Weststraat 12 - Ouddorp
+38;71;81;Zeer goed;1;Gemiddeld;2;Matig;3;8.5;2;vers;1;11.3;2;2.77;1;14;0;1;0;0;1;76;Vishandel Frijters;Verkoopwagen Doormanplein - Capelle a/d IJssel
+93;198;69;Zeer goed;1;Sterk;3;Goed;2;7.4;2;nietvers;0;16.4;3;2.89;2;14.5;0;1;0;1;0;65;Vishandel Gebroeders Van Diermen;Verkoopwagen dagmarkt vrijdag Marktstraat - Twello
+16;36;60;Waarschuwingsfase;4;Sterk;3;Goed;2;13.6;3;nietvers;0;13.6;2;3.75;3;10;0;1;0;1;0;114;Vishandel gebroeders Van Zuilen & Zn;Winthontlaan 10 - Utrecht
+91;159;55;Voldoende;2;Gemiddeld;2;Zeer goed;1;6.1;1;vers;1;10.8;2;3.18;2;15.5;0;1;0;0;1;45;Vishandel Ger Buijs;Jacob van Campenplein - Rotterdam
+95;201;66;Zeer goed;1;Sterk;3;Goed;2;13.1;3;vers;1;15.3;3;3.4;2;9.5;0;1;0;1;0;122;Vishandel Gerina Ter Beek;Verkoopwagen parkeerterrein winkelcentrum Keizerslanden - Deventer
+2;4;60;Zeer goed;1;Gemiddeld;2;Goed;2;10.4;3;vers;1;13.1;2;3.33;2;14;0;1;0;0;1;74;Vishandel Gundlach;Groenelaan 73 - Schiedam
+92;197;54;Zeer goed;1;Gemiddeld;2;Zeer goed;1;12.2;3;vers;1;13.2;2;3.33;2;14.5;0;1;0;1;0;64;Vishandel Hameeteman;Hoge Pad 9 - Ouddorp
+75;128;73;Zeer goed;1;Gemiddeld;2;Zeer goed;1;7.1;2;vers;1;10.1;2;3.42;2;14.5;0;1;0;1;1;63;Vishandel Harry van Goor;Johannes Vermeerstraat 33 - Maarssen
+115;239;77;Voldoende;2;Gemiddeld;2;Zeer goed;1;9.7;2;vers;1;10.6;2;2.4;1;15;0;1;0;0;0;53;Vishandel Heijeplein;J.P. Heijeplein 1 - Dordrecht
+128;248;80;Goed;1;Gemiddeld;2;Goed;2;6.5;1;vers;1;10.6;2;2.31;1;15.5;0;1;0;0;1;47;Vishandel Heijeplein;J.P. Heijeplein 1 - Dordrecht
+35;75;75;Voldoende;2;Sterk;3;Goed;2;11.6;3;vers;1;13.2;2;3;2;14;0;1;0;1;0;73;Vishandel J. de Weert;Brink 90 - Amstelveen
+119;222;72;Goed;1;Sterk;3;Matig;3;5.9;1;vers;1;5.9;1;2.6;1;14;0;1;0;1;1;78;Vishandel J. van de Geest;Verkoopwagen Pieter Stastokerf - Amersfoort
+97;171;82;Zeer goed;1;Sterk;3;Goed;2;15.9;3;nietvers;0;11.8;2;2.71;1;10.5;0;1;0;1;1;117;Vishandel J.Karregat;Verkoopwagen Markt - Breukelen
+7;10;58;Goed;1;Sterk;3;Goed;2;6.7;1;vers;1;11.8;2;3.41;2;14;0;1;0;0;1;81;Vishandel Jack de Scheveninger;Verkoopwagen Graaf Florisplein - ’s-Gravenzande
+90;157;59;Slecht;3;Gemiddeld;2;Goed;2;11.2;3;nietvers;0;7.5;1;3.38;2;11;0;1;0;1;1;109;Vishandel Jan Zwarthoed;Verkoopwagen weekmarkt woensdag Raadhuisplein - Nederweert
+57;96;63;Zeer goed;1;Sterk;3;Goed;2;6.9;1;nietvers;0;11;2;3.65;3;11;0;1;0;1;1;115;Vishandel Je Maatje;Wesseler-Nering 36-37 - Enschede
+98;211;63;Waarschuwingsfase;4;Bedorven;4;Zeer goed;1;5.5;1;nietvers;0;11.4;2;3.49;3;7.5;0;1;0;1;0;144;Vishandel Jos;Grote Brink 2b - Borger
+102;187;66;Waarschuwingsfase;4;Sterk;3;Slecht;4;7.1;2;nietvers;0;13.3;2;2.86;2;7.5;0;1;0;0;1;136;Vishandel Kees Nobel;Verkoopwagen Vlietplein - Ridderkerk
+52;91;62;Zeer goed;1;Gemiddeld;2;Goed;2;7.1;2;nietvers;0;12.3;2;4.03;3;13;0;1;0;1;1;91;Vishandel Keizer & Zn;Verkoopwagen Veldhoflanden 5 - Enschede
+53;124;51;Waarschuwingsfase;4;Sterk;3;Goed;2;10.3;3;vers;1;12;2;3.82;3;12;0;1;0;0;0;93;Vishandel Koelewijn;P.A. de Kokplein 121 - Dordrecht
+116;215;63;Zeer goed;1;Sterk;3;Matig;3;5.4;1;nietvers;0;10.5;2;3.17;2;12;0;1;0;1;1;102;Vishandel Konter;Haven 21 - Vollenhove
+125;260;50;Zeer goed;1;Sterk;3;Matig;3;12.8;3;nietvers;0;15;3;3.8;3;11.5;0;1;0;1;0;104;Vishandel M.&F.van de Groep;Weekmarkt zaterdag Tjalmastraat - Doetinchem
+49;114;61;Zeer goed;1;Sterk;3;Goed;2;6.8;1;vers;1;13.6;2;2.95;2;14.5;0;1;0;1;0;71;Vishandel Mattie;Verkoopwagen Bouwe Harkemastrjitte - Harkema
+66;153;68;Waarschuwingsfase;4;Gemiddeld;2;Goed;2;8.7;2;nietvers;0;16.9;3;2.86;2;13.5;0;1;0;1;0;78;Vishandel Neerbos;Voorstad 6 - Tiel
+60;140;67;Zeer goed;1;Sterk;3;Slecht;4;8.8;2;nietvers;0;12.8;2;2.91;2;8;0;1;0;1;0;133;Vishandel Neptunusplein;Neptunusplein 27 - Amersfoort
+19;32;79;Goed;1;Gemiddeld;2;Matig;3;4.2;1;vers;1;12.6;2;3.76;3;16;0;1;0;1;1;30;Vishandel Nick;Markt 8 - Druten
+77;133;74;Goed;1;Sterk;3;Matig;3;9.1;2;nietvers;0;11.9;2;3.37;2;11;0;1;0;1;1;114;Vishandel Nico Smit;Wagnerplein 23 - Tilburg
+1;1;63;Zeer goed;1;Gemiddeld;2;Zeer goed;1;3.3;1;vers;1;18.1;3;3.49;3;15;0;1;0;1;0;56;Vishandel Nieuwland;Zonnewijzer 14 - Amersfoort
+13;31;55;Zeer goed;1;Gemiddeld;2;Zeer goed;1;8.1;2;vers;1;13;2;3.63;3;16;0;1;0;1;0;27;Vishandel Peter Nuninga de Haringspecialist;Verkoopwagen dagmarkt Grootzand - Sneek
+10;19;72;Goed;1;Licht;1;Zeer goed;1;8.9;2;vers;1;11.5;2;3.47;2;16;0;1;0;1;1;28;Vishandel Peter Tol;Oostelijke Handelskade 1041–1045 - Amsterdam
+74;170;67;Zeer goed;1;Gemiddeld;2;Zeer goed;1;6.7;1;vers;1;12.2;2;2.98;2;16;0;1;0;1;0;37;Vishandel Peter van Jaan;Schutstraat 36 - Hoogeveen
+139;275;77;Zeer goed;1;Gemiddeld;2;Zeer goed;1;3.3;1;vers;1;12;2;2.92;2;17.5;1;0;1;0;1;1;Vishandel Ruud den Haan;Oudedijk 145 - Rotterdam
+140;281;71;Zeer goed;1;Gemiddeld;2;Zeer goed;1;1.9;1;vers;1;13.4;2;3.16;2;16.7;1;0;1;0;0;9;Vishandel Ruud den Haan;Oudedijk 145 - Rotterdam
+73;167;66;Zeer goed;1;Gemiddeld;2;Zeer goed;1;4.7;1;vers;1;15.2;3;3.03;2;16;0;1;0;1;0;34;Vishandel Sannie Bont;Passage 77 - Nieuwegein
+27;48;53;Zeer goed;1;Gemiddeld;2;Matig;3;7.1;2;nietvers;0;12.6;2;3.27;2;12.5;0;1;0;0;1;100;Vishandel Schot-Bout;Turfkade - Brielle
+22;38;63;Waarschuwingsfase;4;Gemiddeld;2;Goed;2;13.9;3;nietvers;0;7.3;1;3.17;2;11;0;1;0;1;1;111;Vishandel Schuur;Poststraat 36 - Wildervank
+136;273;61;Zeer goed;1;Gemiddeld;2;Zeer goed;1;2.6;1;vers;1;14.2;3;3.03;2;17.5;1;0;1;0;0;1;Vishandel Simonis;Visafslagweg 20 - Den Haag
+143;283;76;Zeer goed;1;Gemiddeld;2;Zeer goed;1;2.5;1;vers;1;12.3;2;2.43;1;17.3;1;0;1;0;1;3;Vishandel Simonis;Visafslagweg 20 - Den Haag
+30;54;69;Waarschuwingsfase;4;Sterk;3;Slecht;4;6.5;1;nietvers;0;10.6;2;2.53;1;7.5;0;1;0;1;1;141;Vishandel Smeets-Jonk;Verkoopwagen weekmarkt woensdag Kerkstraat - Born
+16;26;68;Zeer goed;1;Gemiddeld;2;Matig;3;8.9;2;vers;1;14.2;3;2.94;2;13;0;1;0;1;1;90;Vishandel Sontplein;Sontplein 3 - Groningen
+23;41;64;Goed;1;Gemiddeld;2;Matig;3;13.9;3;vers;1;7.9;1;3.12;2;11.5;0;1;0;1;1;106;Vishandel Tammenga;Verkoopwagen Borgsloot - Groningen
+111;207;77;Goed;1;Gemiddeld;2;Zeer goed;1;6.4;1;vers;1;8.2;1;2.53;1;14.5;0;1;0;1;1;69;Vishandel Theo Muys;Dobbe 7 - Zwolle
+11;21;61;Zeer goed;1;Gemiddeld;2;Matig;3;4.5;1;nietvers;0;13.2;2;3.03;2;9;0;1;0;1;1;128;Vishandel Timmerman;Verkoopwagen Petuniaplein - Zwolle
+75;172;61;Goed;1;Gemiddeld;2;Goed;2;7.5;2;vers;1;9.4;1;3.19;2;14;0;1;0;0;0;74;Vishandel Van den Oever;Laan van Wateringse Veld 1557 - Den Haag
+2;2;76;Zeer goed;1;Gemiddeld;2;Matig;3;4.1;1;vers;1;15.3;3;3.02;2;16;0;1;0;1;0;32;Vishandel Volendam (Godebaldkwartier Utrecht);Godebaldkwartier 80 - Utrecht
+44;80;77;Zeer goed;1;Sterk;3;Zeer goed;1;5.3;1;vers;1;12.6;2;3.05;2;14.5;0;1;0;1;1;67;Vishandel Volendam (Zamenhofdreef Utrecht);Zamenhofdreef 31 - Utrecht
+39;72;78;Zeer goed;1;Sterk;3;Goed;2;6.3;1;nietvers;0;9.7;1;3.14;2;11.5;0;1;0;1;1;107;Vishandel Volendam Kerkelanden;Kapittelweg 233 - Hilversum
+24;53;76;Zeer goed;1;Gemiddeld;2;Goed;2;7.6;2;vers;1;13.1;2;2.96;2;15;0;1;0;1;0;50;Vishandel Vossole;1e Hogeweg 1 - Zeist
+93;162;73;Zeer goed;1;Gemiddeld;2;Matig;3;8.5;2;vers;1;13;2;3.35;2;14;0;1;0;1;1;77;Vishandel Waninge;Walderstraat 27 - Lochem
+101;183;68;Zeer goed;1;Sterk;3;Matig;3;6.9;1;nietvers;0;10.5;2;3.08;2;13;0;1;0;1;1;95;Vishandel Wennekes;Verkoopwagen parkeerterrein Jumbo ’s-Gravenwaardsedijk 78 a - Tolkamer
+127;246;67;Zeer goed;1;Gemiddeld;2;Goed;2;6.9;1;vers;1;10.7;2;2.98;2;14.5;0;1;0;0;1;70;Vishoek Maru;Villapark - Rotterdam
+115;214;68;Zeer goed;1;Gemiddeld;2;Matig;3;7.1;2;vers;1;13.7;2;3.67;3;14;0;1;0;1;1;75;Vislokaal;Soesterbergsestraat 31 - Soest
+127;262;72;Waarschuwingsfase;4;Sterk;3;Goed;2;10.7;3;nietvers;0;8.7;1;3.12;2;11.5;0;1;0;1;0;102;Vispaleis 't Spil;t Spil 33a - Monnickendam
+122;231;59;Zeer goed;1;Sterk;3;Goed;2;10.2;3;nietvers;0;9;1;3.38;2;9;0;1;0;1;1;127;Vispaleis Koelewijn;Vlijtseweg 184 - Apeldoorn
+34;73;77;Zeer goed;1;Bedorven;4;Goed;2;11.1;3;nietvers;0;16.9;3;2.27;1;7.5;0;1;0;1;0;142;Vispaleis Westerhuis;Mello Coendersbuurt 1a - Termuntenzijl
+87;152;49;Zeer goed;1;Sterk;3;Goed;2;13.6;3;vers;1;11.8;2;4.48;3;8;0;1;0;1;1;134;Visparadijs R. Emons;Frankenstraat 45 - Maastricht
+58;136;55;Zeer goed;1;Gemiddeld;2;Goed;2;3.2;1;vers;1;11.7;2;4.18;3;11.5;0;1;0;1;0;108;Visplaza Roel Hopman;Van Weedestraat 149 - Soest
+118;242;73;Zeer goed;1;Sterk;3;Goed;2;7.9;2;nietvers;0;15.4;3;2.73;1;12.5;0;1;0;1;0;90;Visscher's Zeevishandel;Weekmarkt vrijdag Melkmarkt - Zwolle
+48;85;63;Voldoende;2;Gemiddeld;2;Matig;3;7.9;2;nietvers;0;12.4;2;3.17;2;12;0;1;0;1;1;101;Visshop De Noordkade;Noordkade 27 - Drachten
+20;43;55;Zeer goed;1;Gemiddeld;2;Matig;3;6;1;vers;1;13.1;2;3.36;2;14.5;0;1;0;1;0;70;Visspeciaalzaak 't Visnet;Nieuwstraat 38 - Barneveld
+8;16;57;Voldoende;2;Sterk;3;Matig;3;5.2;1;nietvers;0;8.8;1;3.33;2;11.5;0;1;0;0;0;109;Visspeciaalzaak Aan de Kant;Molendijk 20 - Oud Beijerland
+34;65;74;Waarschuwingsfase;4;Gemiddeld;2;Goed;2;7.3;2;nietvers;0;10.8;2;3.04;2;13.5;0;1;0;1;1;82;Visspeciaalzaak Ans Klappe;Heidebloemstraat 57 - Nijmegen
+116;240;68;Zeer goed;1;Sterk;3;Zeer goed;1;9;2;nietvers;0;8.6;1;3.67;3;9;0;1;0;1;0;124;Visspeciaalzaak Baarssen;Groenestraat 357 - Nijmegen
+45;81;66;Zeer goed;1;Gemiddeld;2;Goed;2;4.7;1;vers;1;11.7;2;2.95;2;14.5;0;1;0;1;1;66;Visspeciaalzaak De Bleistarte;Schoolstraat 4 - Zwartsluis
+120;247;59;Waarschuwingsfase;4;Sterk;3;Goed;2;8.9;2;nietvers;0;13.1;2;3.55;3;9.5;0;1;0;1;0;117;Visspeciaalzaak De Haan;Hoofdstraat 187 - Voorthuizen
+140;277;62;Zeer goed;1;Groen;1;Zeer goed;1;5.6;1;vers;1;12.7;2;3.54;3;15;0;1;1;0;1;56;Visspeciaalzaak Gebroeders De Block;Raadhuisplein 57 a - Krimpen a/d IJssel
+49;86;72;Zeer goed;1;Gemiddeld;2;Zeer goed;1;3.3;1;vers;1;11.7;2;3.72;3;16.3;0;1;0;1;1;21;Visspeciaalzaak Havenzicht (Breda);Lunenburgstraat 3 - Breda
+134;270;62;Zeer goed;1;Gemiddeld;2;Zeer goed;1;3.9;1;vers;1;15.5;3;3.54;3;16.5;0;1;0;1;0;18;Visspeciaalzaak Havenzicht (Etten-Leur);Bisschopsmolenstraat 96 - Etten-Leur
+47;108;61;Zeer goed;1;Gemiddeld;2;Zeer goed;1;4.6;1;vers;1;14;3;3.19;2;15.5;0;1;0;1;0;45;Visspeciaalzaak Van Reenen;Arkendonk 46 - Oosterhout
+124;236;64;Zeer goed;1;Sterk;3;Goed;2;4.3;1;nietvers;0;6.4;1;3.51;3;11.5;0;1;0;1;1;103;Visspeciaalzaak Van Schoonhoven;Marktplein 11 - Bennekom
+50;117;60;Zeer goed;1;Sterk;3;Matig;3;10.2;3;nietvers;0;11.8;2;3.25;2;8.5;0;1;0;1;0;127;Visspeciaalzaak Vistrend;Moerwijk 28 - Breda
+1;3;58;Goed;1;Gemiddeld;2;Goed;2;9.8;2;vers;1;5.9;1;3.1;2;14.5;0;1;0;0;1;65;Visspecialist Bonito;Verkoopwagen Hobbemastraat - Maassluis
+28;61;79;Zeer goed;1;Sterk;3;Matig;3;4.5;1;vers;1;15;3;2.53;1;13;0;1;0;1;0;86;Visspecialist Cees Bijlsma;Merk 23 - Workum
+105;195;66;Zeer goed;1;Gemiddeld;2;Zeer goed;1;-1.2;1;vers;1;13.7;2;3.4;2;17.1;1;0;0;0;1;5;Visspecialist Corné Struik;Verkoopwagen parkeerterrein De Markte - Krimpen a/d Lek
+22;50;53;Zeer goed;1;Gemiddeld;2;Zeer goed;1;4.5;1;vers;1;16.5;3;3.67;3;16.5;0;1;0;0;0;21;Visspecialist Hellevoetsluis;Struytse Hoeck 319a - Hellevoetsluis
+82;143;58;Zeer goed;1;Gemiddeld;2;Zeer goed;1;7.2;2;vers;1;12.7;2;3.62;3;15;0;1;0;0;1;50;Visspecialist Hellevoetsluis;Struytse Hoeck 319 a - Hellevoetsluis
+74;127;65;Zeer goed;1;Gemiddeld;2;Zeer goed;1;1.1;1;vers;1;11.7;2;3.46;2;16.3;0;1;0;0;1;19;Visspecialist Jaap Struik;Verkoopwagen Essendreef - Gouderak
+88;191;57;Goed;1;Gemiddeld;2;Goed;2;6.2;1;vers;1;12.2;2;3.5;3;15;0;1;0;0;0;59;Visspecialist Klein Scheveningen;Simon Carmiggelthof 49 - Den Haag
+111;234;56;Goed;1;Sterk;3;Matig;3;3.4;1;nietvers;0;6.9;1;3.57;3;8.5;0;1;0;1;0;130;Visspecialist Marc van Mierlo;Schootsestraat 172 - Eindhoven
+138;274;75;Zeer goed;1;Licht;1;Zeer goed;1;5.6;1;vers;1;13.2;2;2.6;1;16.3;0;1;1;0;1;25;Visspecialist Martin den Heijer;Fahrenheitstraat 656 - Den Haag
+141;285;54;Goed;1;Gemiddeld;2;Zeer goed;1;4.3;1;vers;1;18.8;3;3.7;3;16.5;0;1;1;0;0;20;Visspecialist Martin den Heijer;Fahrenheitstraat 656 - Den Haag
+25;56;71;Zeer goed;1;Gemiddeld;2;Goed;2;-0.7;1;vers;1;15;3;3.16;2;15.5;0;1;0;1;0;43;Visspecialist Pasel;Dierenriemstraat 126 - Groningen
+71;165;76;Waarschuwingsfase;4;Sterk;3;Goed;2;10.4;3;nietvers;0;9.6;1;2.89;2;9.5;0;1;0;1;0;116;Visspecialist Pieter Smit;Westermarkt 112 - Tilburg
+128;263;49;Goed;1;Sterk;3;Goed;2;6.6;1;vers;1;14;3;3.87;3;12;0;1;0;0;0;101;Visspecialist R. Bijl;Broersveld 113b - Schiedam
+4;6;72;Zeer goed;1;Licht;1;Goed;2;0.4;1;vers;1;14.1;3;3.12;2;16.3;0;1;0;0;1;16;Visspecialist Sluizeman;Baronie 90 - Alphen aan den Rijn
+6;13;78;Zeer goed;1;Gemiddeld;2;Zeer goed;1;4.3;1;vers;1;9;1;2.88;2;17;1;0;0;0;0;8;Visspecialist Sluizeman;Baronie 90 - Alphen aan den Rijn
+129;249;60;Goed;1;Gemiddeld;2;Matig;3;6.2;1;vers;1;7.2;1;3.33;2;14;0;1;0;0;1;79;Visspecialist Spijkenisse;Winterakker 27 - Spijkenisse
+43;101;61;Zeer goed;1;Gemiddeld;2;Zeer goed;1;2.1;1;vers;1;12.3;2;3.03;2;16.5;0;1;0;0;0;13;Visspecialist Stevenshof;Stevensbloem 163 - Leiden
+5;12;65;Zeer goed;1;Gemiddeld;2;Zeer goed;1;-0.9;1;vers;1;14.7;3;3.23;2;16.7;1;0;0;0;0;10;Visspecialist Struik;Verkoopwagen vrijdag Maenstand - Ouderkerk aan den IJssel
+63;148;64;Zeer goed;1;Sterk;3;Zeer goed;1;8.9;2;vers;1;10.3;2;3.67;3;15.5;0;1;0;1;0;42;Visspecialist Theo Tax;Promenade 35-37 - Malden
+10;20;55;Zeer goed;1;Licht;1;Zeer goed;1;5.1;1;vers;1;11.3;2;3.54;3;15.5;0;1;0;1;0;46;Visspecialist Van Lopik;Piazza Center 27 - Gorinchem
+71;122;61;Zeer goed;1;Gemiddeld;2;Goed;2;4.7;1;vers;1;7.7;1;3.19;2;15.5;0;1;0;1;1;42;Visspecialist Van Lopik;Piazza Center 27 - Gorinchem
+66;115;76;Zeer goed;1;Gemiddeld;2;Zeer goed;1;5.9;1;vers;1;13.5;2;2.82;1;16;0;1;0;0;1;32;Visspecialisten Kees en Chantal Sloot;Keizerswaard 12 - Rotterdam
+42;99;72;Voldoende;2;Sterk;3;Goed;2;8.2;2;nietvers;0;14.1;3;2.91;2;13;0;1;0;1;0;84;Visspecialiteiten 't Vers Waard;Raadhuisstraat 20 - Heerhugowaard
+33;70;65;Zeer goed;1;Gemiddeld;2;Zeer goed;1;0.7;1;vers;1;13;2;3.46;2;16.5;0;1;0;1;0;16;Visspecialiteiten 't Vissertje;Mercatorplein 105 - Apeldoorn
+47;83;77;Zeer goed;1;Gemiddeld;2;Zeer goed;1;10.5;3;vers;1;11.4;2;2.9;2;11.5;0;1;0;0;1;105;Visspecialiteiten De Oceaan;Plein 1953-1 - Rotterdam
+59;104;65;Zeer goed;1;Sterk;3;Slecht;4;14.3;3;nietvers;0;12.8;2;3.46;2;7.5;0;1;0;1;1;138;Visspecialiteiten Tom Brummel;Verkoopwagen Linie - Apeldoorn
+79;179;64;Goed;1;Sterk;3;Goed;2;13.7;3;nietvers;0;9.8;1;2.73;1;9.5;0;1;0;1;0;123;Vistaria 't Vrolijke Maatje;Verkoopwagen De Wending - Delfzijl
+108;203;80;Zeer goed;1;Gemiddeld;2;Zeer goed;1;4.1;1;vers;1;12.6;2;2.81;1;16.6;1;0;0;1;1;10;Vistaria Schaap;Ootmarsumsestraat 296 - Almelo
+97;209;66;Zeer goed;1;Gemiddeld;2;Zeer goed;1;7.3;2;vers;1;14.4;3;3.4;2;15.5;0;1;0;1;0;40;Vistaria Schaap;Ootmarsumsestraat 296 - Almelo
+27;60;45;Voldoende;2;Gemiddeld;2;Zeer goed;1;5.8;1;vers;1;11.6;2;4.44;3;16.7;0;1;0;0;0;12;Viswinkel De Lange;Marcelisstraat 37b - Den Haag
+80;138;57;Zeer goed;1;Licht;1;Zeer goed;1;5.6;1;vers;1;13.2;2;3.5;3;16.9;1;0;0;0;1;7;Viswinkel De Lange;Marcelisstraat 37b - Den Haag
+62;147;72;Zeer goed;1;Gemiddeld;2;Goed;2;8.2;2;vers;1;14.3;3;2.7;1;15;0;1;0;1;0;51;Viswinkel De Noordzee;Spoorsingel 73 - Beverwijk
+92;161;85;Goed;1;Gemiddeld;2;Goed;2;13.4;3;nietvers;0;12.9;2;2.35;1;10.5;0;1;0;1;1;116;Volendammer Vishandel Jan Plat;Verkoopwagen parkeerterrein Stationsweg 3 - Broek op Langedijk
+53;92;63;Zeer goed;1;Gemiddeld;2;Zeer goed;1;9.4;2;vers;1;12.9;2;2.94;2;16;0;1;0;1;1;29;Volendammer Vishandel Johan Schilder;Europaboulevard 361 - Alkmaar
+122;255;79;Zeer goed;1;Gemiddeld;2;Zeer goed;1;4.1;1;vers;1;13;2;2.53;1;16.5;0;1;0;1;0;19;Volendammer Vishandel Johan Schilder;Europaboulevard 361 - Alkmaar
+143;288;66;Zeer goed;1;Gemiddeld;2;Zeer goed;1;4.2;1;vers;1;14.6;3;2.95;2;17.3;1;0;1;0;0;3;Volendammer Vishandel Koning;Bogaardplein 10 - Rijswijk
+147;291;74;Zeer goed;1;Gemiddeld;2;Zeer goed;1;2.9;1;vers;1;11.6;2;2.7;1;16.8;1;0;1;0;1;8;Volendammer Vishandel Koning;Bogaardplein 10 - Rijswijk
+125;243;88;Zeer goed;1;Gemiddeld;2;Goed;2;-2.2;1;vers;1;11.7;2;2.55;1;15;0;1;0;1;1;52;Volendammer Vishandel Kroon;Globeplein 67 - Almere
+96;169;59;Voldoende;2;Gemiddeld;2;Matig;3;6.1;1;vers;1;10.5;2;3.38;2;13;0;1;0;0;1;94;Volendammer Vishandel Plat & Tol (Quirinegang Zoetermeer);Quirinegang 81 - Zoetermeer
+29;62;76;Zeer goed;1;Gemiddeld;2;Zeer goed;1;6.9;1;vers;1;12.7;2;2.56;1;15;0;1;0;0;0;62;Volendammer Vishandel Plat & Tol (Westwaarts Zoetermeer);Westwaarts 76 - Zoetermeer
+94;164;68;Waarschuwingsfase;4;Gemiddeld;2;Zeer goed;1;2.8;1;vers;1;14.8;3;3.23;2;16.5;0;1;0;1;1;11;Volendammer Vishandel Sanny Bont;Passage 77 - Nieuwegein
+40;74;73;Zeer goed;1;Sterk;3;Matig;3;6.5;1;nietvers;0;11.6;2;3.15;2;11.5;0;1;0;1;1;108;Volendammer Vishandel Sier;Landstraat 34 - Bussum
+78;134;86;Goed;1;Gemiddeld;2;Zeer goed;1;5.3;1;vers;1;12.2;2;2.55;1;16;0;1;0;1;1;31;Volendammer Vishandel Snoek;Helmholtzstraat 56 - Amsterdam
+73;126;78;Goed;1;Gemiddeld;2;Zeer goed;1;7.4;2;nietvers;0;13.9;2;3.52;3;13.5;0;1;0;1;1;83;Volendammer Vishandel Tol;De Huesmolen 74 - Hoorn
+61;107;79;Zeer goed;1;Gemiddeld;2;Zeer goed;1;1.7;1;vers;1;11.1;2;2.84;2;15.5;0;1;0;1;1;40;Volendammer Vispaleis Tol;Brockwaystraat 1 - Haarlem
+18;30;71;Goed;1;Gemiddeld;2;Matig;3;10.4;3;nietvers;0;10.6;2;2.81;1;10;0;1;0;1;1;121;Volendammer Visspecialist Steur;De Middend 232 a - Bovenkarspel
+13;23;72;Goed;1;Gemiddeld;2;Zeer goed;1;4.1;1;vers;1;10.4;2;3.15;2;16.3;0;1;0;1;1;23;Volendammer Visspecialist Tom Tuijp;Middenburcht 7 - Vleuten
+31;64;75;Zeer goed;1;Gemiddeld;2;Zeer goed;1;2.2;1;vers;1;14.1;3;3.06;2;17;1;0;0;1;0;4;Volendammer Visspecialist Tom Tuijp;Middenburcht 7 - Vleuten
+112;208;71;Waarschuwingsfase;4;Sterk;3;Goed;2;8.3;2;nietvers;0;8.9;1;3.09;2;11.5;0;1;0;0;1;104;XL Vis;De Stede 21 - Den Haag
+104;223;67;Waarschuwingsfase;4;Sterk;3;Goed;2;10.8;3;vers;1;10.9;2;3.35;2;10.5;0;1;0;1;0;110;Zeevishandel Brassem;t Groentje 4 - Domburg
+30;63;63;Zeer goed;1;Gemiddeld;2;Zeer goed;1;-1.4;1;vers;1;14;3;3.96;3;16.5;0;1;0;1;0;17;Zeevishandel De Botter;Hessenweg 185a - De Bilt
+45;103;61;Zeer goed;1;Sterk;3;Goed;2;6.3;1;vers;1;9.6;1;3.68;3;13;0;1;0;1;0;88;Zeevishandel De Graafschap;Prins Bernhardweg: parkeerterrein AH - Lochem
+29;52;65;Slecht;3;Gemiddeld;2;Slecht;4;6.1;1;vers;1;10.5;2;3.46;2;12.5;0;1;0;1;1;96;Zeevishandel Kees Heinen;Verkoopwagen dinsdag Waardenburglaan - Tiel
+76;173;67;Zeer goed;1;Gemiddeld;2;Zeer goed;1;3.6;1;vers;1;12.7;2;2.98;2;16;0;1;0;0;0;31;Zeevishandel Kees Vrolijk;Lange Tiendeweg 61 - Gouda
+37;68;60;Zeer goed;1;Gemiddeld;2;Matig;3;9.1;2;nietvers;0;9.9;1;3.33;2;10.5;0;1;0;0;1;119;Zeevishandel Van Doornik;Verkoopwagen dagmarkt dinsdag - Gouda
+108;229;66;Afkeurenswaardig;5;Gemiddeld;2;Matig;3;9.8;2;vers;1;18.1;3;2.95;2;7.5;0;1;0;0;0;134;Zeevishandel W. van Oosten;Buitenwatersloot 43 - Delft
