@@ -62,7 +62,13 @@ library(scico)
  
   
 # Retrieve data with municipal boundaries from PDOK
-municipalBoundaries <- st_read("https://geodata.nationaalgeoregister.nl/cbsgebiedsindelingen/wfs?request=GetFeature&service=WFS&version=2.0.0&typeName=cbs_gemeente_2017_gegeneraliseerd&outputFormat=json")
+# municipalBoundaries <- st_read("https://geodata.nationaalgeoregister.nl/cbsgebiedsindelingen/wfs?request=GetFeature&service=WFS&version=2.0.0&typeName=cbs_gemeente_2017_gegeneraliseerd&outputFormat=json")
+
+# save(municipalBoundaries, file="datasets/municipalBoundaries.Rdata")
+
+load(file="datasets/municipalBoundaries.Rdata")
+
+municipalBoundaries <- st_transform(municipalBoundaries, crs=4326)
 
 statcode_2017 <- municipalBoundaries$statcode
 statcode_2016 <- pop_by_municipality_2016$statcode
@@ -121,7 +127,7 @@ ours.df$lon <- ours.maps.df$lon
 ours.df$lat <- ours.maps.df$lat 
 attach(ours.df)
 quad.fit <- lm(cijfer~1+lon+I(lon**2)+lat+I(lat**2)+I(lon*lat))
-lon_grid <- 3.2 + 1:100*4/100; lat_grid <- 50.5 + 1:100*3/100
+lon_grid <- 3.2 + 1:400*4/400; lat_grid <- 50.5 + 1:400*3/400
 lon_lat_grid <- as.data.frame(expand_grid(lon_grid, lat_grid))
 lon_lat_contour <- lon_lat_grid %>% add_column(Incpt = 1, lonSq = lon_lat_grid[,1]**2, latSq = lon_lat_grid[,2]**2, lonXlat=lon_lat_grid[,1]*lon_lat_grid[,2])
 lon_lat_contour <- lon_lat_contour[,c(3,1,4,2,5,6)]
@@ -140,21 +146,24 @@ get_countries <-  function(long, lat)
 
 NL_or_not <- (get_countries(lon_lat_grid[,1], lon_lat_grid[,2])=="Netherlands")
 NL_or_not[is.na(NL_or_not)] <- FALSE
-quad.fit.contour.NL <- data_frame(lon=lon_lat_grid[,1], lat=lon_lat_grid[,2], quad.fit.value=pred.values.contour)
+quad.fit.contour.NL <- tibble(lon=lon_lat_grid[,1], lat=lon_lat_grid[,2], quad.fit.value=pred.values.contour)
 
-# utrecht_gps <- c(5.116667, 52.083333)
-# ret <- apply(lon_lat_grid[NL_or_not,], 1, function(v) {sum((v-utrecht_gps)^2)})
-utrecht_grid_idx <- 4753 # in original grid
+utrecht_gps <- c(5.116667, 52.083333)
+ret <- apply(lon_lat_grid[NL_or_not,], 1, function(v) {sum((v-utrecht_gps)^2)})
+utrecht_grid_idx <- 76611 # in original grid
 utrecht_drift <- as.numeric(6- quad.fit.contour.NL[utrecht_grid_idx,]$quad.fit.value)
 
 quad.fit.contour.NL <- quad.fit.contour.NL[NL_or_not,] 
 quad.fit.contour.NL$quad.fit.value <- quad.fit.contour.NL$quad.fit.value + utrecht_drift
-quad.fit.contour.NL.sf <- st_as_sf(quad.fit.contour.NL,coords=c("lon","lat"), crs = 4326)
+# quad.fit.contour.NL.sf <- st_as_sf(quad.fit.contour.NL,coords=c("lon","lat"), crs = 4326)
 
 
 
 
-NL_map <- ggmap::get_map(location = c(left=3.2,right=7.5,bottom=50.5,top=54), source = 'stamen', maptype = 'toner') 
+# NL_map <- ggmap::get_map(location = c(left=3.2,right=7.5,bottom=50.5,top=54), source = 'stamen', maptype = 'toner') 
+# save(NL_map, file="datasets/NL_map.Rdata")
+
+load(file="datasets/NL_map.Rdata")
 NL <- ggmap::ggmap(NL_map,extent="normal")
 NL + geom_contour_filled(data=quad.fit.contour.NL, aes(lon,lat,z=quad.fit.value), alpha=0.8, breaks=(1:14)/2)+ ggtitle("without covariates") +
   # scale_fill_manual(values=heat.colors(15)[c(1:12,15)],drop=FALSE)
@@ -166,6 +175,10 @@ quad.fit <- lm(cijfer~1+lon+I(lon**2)+lat+I(lat**2)+I(lon*lat)+ripeness +price_p
 
 summary(quad.fit)
 
+plain.lm <- lm(cijfer~1++ripeness +price_per_100g+weight+cleanness+fat_percentage+micro)
+summary(plain.lm)
+anova(quad.fit,plain.lm)
+
 lon_lat_contour <- lon_lat_grid %>% add_column(Incpt = 1, lonSq = lon_lat_grid[,1]**2, latSq = lon_lat_grid[,2]**2, lonXlat=lon_lat_grid[,1]*lon_lat_grid[,2])
 lon_lat_contour <- lon_lat_contour[,c(3,1,4,2,5,6)]
 quad.fit.coef <- coefficients(quad.fit)
@@ -173,7 +186,7 @@ pred.values.contour <- as.matrix(lon_lat_contour) %*% as.matrix(quad.fit.coef[1:
 
 # NL_or_not <- (get_countries(lon_lat_grid[,1], lon_lat_grid[,2])=="Netherlands")
 # NL_or_not[is.na(NL_or_not)] <- FALSE
-quad.fit.contour.NL <- data_frame(lon=lon_lat_grid[,1], lat=lon_lat_grid[,2], quad.fit.value=pred.values.contour)
+quad.fit.contour.NL <- tibble(lon=lon_lat_grid[,1], lat=lon_lat_grid[,2], quad.fit.value=pred.values.contour)
 
 utrecht_drift <- as.numeric(6- quad.fit.contour.NL[utrecht_grid_idx,]$quad.fit.value)
 
@@ -195,6 +208,31 @@ NL + geom_contour_filled(data=quad.fit.contour.NL,
   scale_fill_manual(values = viridis::viridis_pal()(13)[-(1:6)],drop=FALSE)+
   geom_point(data=ours.maps.df, aes(x=lon,y=lat, color=supplier_AD), alpha=0.5)
 
+
+## clean version
+
+vendor_plot_title <- "Venders of 2016 and 2017, Dutch New Herring" # (with pop. density)"
+# Create a thematic map
+p <- 
+  commune_density %>%
+  ggplot() +
+  geom_sf(aes(fill = Population_density)) +
+  scale_fill_gradient("pop. density\nby community",trans = "log", 
+                      low = alpha("white",0.5), high = alpha("black",0.75),  guide = "colorbar")+
+  ggnewscale::new_scale_fill() +
+  geom_contour_filled(data=quad.fit.contour.NL, 
+                      aes(lon,lat,z=quad.fit.value),
+                      breaks = (6+(1:8))/2, alpha = 0.7) +
+  guides(fill=guide_legend(reverse=TRUE,ncol=2))  + 
+  scale_fill_manual("quad. pred. w. cov.", values = viridis::viridis_pal()(13)[-(1:6)],drop=FALSE)+
+  geom_point(data=ours.maps.df, aes(x=lon,y=lat,size=cijfer,color=year), alpha=0.5) +
+   scale_color_manual(values = c("darkred", "cyan")) +
+   scale_size_area("score", max_size = 4) + 
+   labs(title = vendor_plot_title, fill = "") +
+  theme_void()
+p
+
+if (FALSE) {
 attach(ours.df)
 
 table(Repeat)
@@ -344,5 +382,4 @@ herring <- ours.maps.df[ours.maps.df$cijfer!=0,]
 # plot(her_vgm)
 # her_fit <- gstat::fit.variogram(her_vgm, model=vgm(psill = 8, "Exp", range = NA, 1))
 
-
-
+}

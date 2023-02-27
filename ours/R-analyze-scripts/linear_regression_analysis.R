@@ -132,8 +132,10 @@ sum(vollaard.df$id == vollaard_id)
 ## should lead to identical p-values
 
 final_score_vollaardized <- score_pm_rearrange(final_score,eps_new = 0.2) + 7.5
+ripeness_vollaardized <- ripeness
+ripeness_vollaardized[ripeness_vollaardized=="Green"] = "Light"
 
-first.lm <- lm(final_score_vollaardized ~ weight + temp_cat + fat_cat + price_cat + freshly_cleaned + micro + ripeness + cleaning + k30 + year)
+first.lm <- lm(final_score_vollaardized ~ weight + temp_cat + fat_cat + price_cat + freshly_cleaned + micro + ripeness_vollaardized + cleaning + k30 + year)
 summary(first.lm)
 # summary(aov(final_score ~ weight + temp_cat + fat_cat + price_cat + freshly_cleaned + micro + ripeness + cleaning + k30 + year))
 drop1(first.lm, test="F")
