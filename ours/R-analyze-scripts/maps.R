@@ -160,7 +160,7 @@ quad.fit.contour.NL$quad.fit.value <- quad.fit.contour.NL$quad.fit.value + utrec
 
 
 
-# NL_map <- ggmap::get_map(location = c(left=3.2,right=7.5,bottom=50.5,top=54), source = 'stamen', maptype = 'toner') 
+# NL_map <- ggmap::get_map(location = c(left=3.2,right=7.3,bottom=50.7,top=53.7), source = 'stamen', maptype = 'terrain') 
 # save(NL_map, file="datasets/NL_map.Rdata")
 
 load(file="datasets/NL_map.Rdata")
@@ -195,20 +195,21 @@ quad.fit.contour.NL$quad.fit.value <- quad.fit.contour.NL$quad.fit.value + utrec
 
 # quad.fit.contour.NL.sf <- st_as_sf(quad.fit.contour.NL,coords=c("lon","lat"), crs = 4326)
 
-# NL_map <- ggmap::get_map(location = c(left=3.2,right=7.5,bottom=50.5,top=54), source = 'stamen', maptype = 'toner') 
 NL <- ggmap::ggmap(NL_map,extent="normal")
 NL + geom_contour_filled(data=quad.fit.contour.NL, 
                          aes(lon,lat,z=quad.fit.value),
                          breaks = (6+(1:8))/2, alpha = 0.7) +
-  ggtitle("with covariates") +
+  ggtitle("   quadratic spatial effect w/ covariates") +
   # scale_fill_manual(values = heat.colors(15)[-c((1:6),13,14)],drop=FALSE) +
   # theme_void() + scale_color_continuous("pred. score") 
   guides(fill=guide_legend(reverse=TRUE))  + 
   # scale_fill_viridis_b()
-  scale_fill_manual(values = viridis::viridis_pal()(13)[-(1:6)],drop=FALSE)+
-  geom_point(data=ours.maps.df, aes(x=lon,y=lat, color=supplier_AD), alpha=0.5)
+  scale_fill_manual(values = viridis::viridis_pal()(13)[-(1:6)],drop=FALSE) +
+  #geom_point(data=ours.maps.df, aes(x=lon,y=lat, color=supplier_AD), alpha=0.5) +
+  theme_void()
 
 
+ggsave('spatial_right.png', dpi=300, bg='transparent',width = 15, height = 15, units = "cm")
 ## clean version
 
 vendor_plot_title <- "Venders of 2016 and 2017, Dutch New Herring" # (with pop. density)"
@@ -217,20 +218,21 @@ p <-
   commune_density %>%
   ggplot() +
   geom_sf(aes(fill = Population_density)) +
-  scale_fill_gradient("pop. density\nby community",trans = "log", 
+  scale_fill_gradient("pop. density\nby community",trans = "log10", 
                       low = alpha("white",0.5), high = alpha("black",0.75),  guide = "colorbar")+
   ggnewscale::new_scale_fill() +
-  geom_contour_filled(data=quad.fit.contour.NL, 
-                      aes(lon,lat,z=quad.fit.value),
-                      breaks = (6+(1:8))/2, alpha = 0.7) +
-  guides(fill=guide_legend(reverse=TRUE,ncol=2))  + 
-  scale_fill_manual("quad. pred. w. cov.", values = viridis::viridis_pal()(13)[-(1:6)],drop=FALSE)+
+  # geom_contour_filled(data=quad.fit.contour.NL, 
+  #                    aes(lon,lat,z=quad.fit.value),
+  #                    breaks = (6+(1:8))/2, alpha = 0.7) +
+  # guides(fill=guide_legend(reverse=TRUE,ncol=2))  + 
+  # scale_fill_manual("quad. pred. w. cov.", values = viridis::viridis_pal()(13)[-(1:6)],drop=FALSE)+
   geom_point(data=ours.maps.df, aes(x=lon,y=lat,size=cijfer,color=year), alpha=0.5) +
    scale_color_manual(values = c("darkred", "cyan")) +
    scale_size_area("score", max_size = 4) + 
    labs(title = vendor_plot_title, fill = "") +
   theme_void()
 p
+ggsave('spatial_left.png', p, dpi=300, bg='transparent',width = 15, height = 15, units = "cm")
 
 if (FALSE) {
 attach(ours.df)
