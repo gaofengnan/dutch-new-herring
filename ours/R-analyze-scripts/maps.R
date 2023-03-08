@@ -196,7 +196,7 @@ quad.fit.contour.NL$quad.fit.value <- quad.fit.contour.NL$quad.fit.value + utrec
 # quad.fit.contour.NL.sf <- st_as_sf(quad.fit.contour.NL,coords=c("lon","lat"), crs = 4326)
 
 NL <- ggmap::ggmap(NL_map,extent="normal")
-NL + geom_contour_filled(data=quad.fit.contour.NL, 
+p <- NL + geom_contour_filled(data=quad.fit.contour.NL, 
                          aes(lon,lat,z=quad.fit.value),
                          breaks = (6+(1:8))/2, alpha = 0.7) +
   ggtitle("   quadratic spatial effect w/ covariates") +
@@ -207,9 +207,9 @@ NL + geom_contour_filled(data=quad.fit.contour.NL,
   scale_fill_manual(values = viridis::viridis_pal()(13)[-(1:6)],drop=FALSE) +
   #geom_point(data=ours.maps.df, aes(x=lon,y=lat, color=supplier_AD), alpha=0.5) +
   theme_void()
+p
 
-
-ggsave('spatial_right.png', dpi=300, bg='transparent',width = 15, height = 15, units = "cm")
+ggsave('plots/spatial_right.png', p, dpi=300, bg='transparent',width = 15, height = 15, units = "cm")
 ## clean version
 
 vendor_plot_title <- "Venders of 2016 and 2017, Dutch New Herring" # (with pop. density)"
@@ -232,7 +232,7 @@ p <-
    labs(title = vendor_plot_title, fill = "") +
   theme_void()
 p
-ggsave('spatial_left.png', p, dpi=300, bg='transparent',width = 15, height = 15, units = "cm")
+ggsave('plots/spatial_left.png', p, dpi=300, bg='transparent',width = 15, height = 15, units = "cm")
 
 if (FALSE) {
 attach(ours.df)
