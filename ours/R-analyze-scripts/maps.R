@@ -10,21 +10,9 @@ library(dplyr) # not needed, but used in examples below
 library(readxl)
 library(tidyverse)
 
-# source('./ancillary.R')
+source('./ancillary.R')
+source('./import_data_universal.R')
 
-ours.df <- read_excel("datasets/ours.xlsx")
-ours.df <- arrange(ours.df, vollaard_id)
-names(ours.df)
-str(ours.df)
-
-vollaard.df <- read_excel("datasets/vollaard.xlsx")
-names(vollaard.df)
-
-year <- vollaard.df$yr2017
-year <- as.character(year)
-year[year == "0"] <- "2016"
-year[year == "1"] <- "2017"
-year <- factor(year, levels = c("2016", "2017"))
 
 ours.maps.df <- dplyr::select(ours.df, c("name","address","unique_id","vollaard_id", "supplier_AD", "cijfer"))
 ours.maps.df <- cbind(ours.maps.df, year)
@@ -123,9 +111,9 @@ p
 # }
 # non_zero_grade_idx <- ours.df$eindcijfer!=0
 # vollaard.df.non.zero <- as.data.frame(vollaard.df[non_zero_grade_idx,])
-ours.df$lon <- ours.maps.df$lon
-ours.df$lat <- ours.maps.df$lat 
-attach(ours.df)
+lon <- ours.maps.df$lon
+lat <- ours.maps.df$lat 
+# attach(ours.df)
 quad.fit <- lm(cijfer~1+lon+I(lon**2)+lat+I(lat**2)+I(lon*lat))
 lon_grid <- 3.2 + 1:400*4/400; lat_grid <- 50.5 + 1:400*3/400
 lon_lat_grid <- as.data.frame(expand_grid(lon_grid, lat_grid))
@@ -171,11 +159,11 @@ NL + geom_contour_filled(data=quad.fit.contour.NL, aes(lon,lat,z=quad.fit.value)
     # scale_fill_viridis_b()
     scale_fill_manual(values = viridis::viridis_pal()(13),drop=FALSE)
  
-quad.fit <- lm(cijfer~1+lon+I(lon**2)+lat+I(lat**2)+I(lon*lat)+ripeness +price_per_100g+weight+cleanness+fat_percentage+micro)
+quad.fit <- lm(final_score~1+lon+I(lon**2)+lat+I(lat**2)+I(lon*lat)+ weight+ temp_cat + fat_cat + freshly_cleaned+ micro+ripeness+cleaning+year+k30) #+factor(atlantic))
 
 summary(quad.fit)
 
-plain.lm <- lm(cijfer~1++ripeness +price_per_100g+weight+cleanness+fat_percentage+micro)
+plain.lm <- lm(final_score~1+ weight+ temp_cat + fat_cat + freshly_cleaned+ micro+ripeness+cleaning+year + k30)
 summary(plain.lm)
 anova(quad.fit,plain.lm)
 
