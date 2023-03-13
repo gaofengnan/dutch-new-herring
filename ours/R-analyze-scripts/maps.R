@@ -159,43 +159,110 @@ NL + geom_contour_filled(data=quad.fit.contour.NL, aes(lon,lat,z=quad.fit.value)
     # scale_fill_viridis_b()
     scale_fill_manual(values = viridis::viridis_pal()(13),drop=FALSE)
  
-quad.fit <- lm(final_score~1+lon+I(lon**2)+lat+I(lat**2)+I(lon*lat)+ weight+ temp_cat + fat_cat + freshly_cleaned+ micro+ripeness+cleaning+year+k30) #+factor(atlantic))
 
+vollaard_orig.df <- read.csv("./datasets/scores_herringtest_2016_2017.csv", sep = ";")
+micro_v <- as.factor(vollaard_orig.df$micro_num)
+levels(micro_v) <- c("Good", "Sufficient", "Bad", "Warning", "Reject")
+table(micro_v)
+
+
+ripeness_v <- as.factor(vollaard_orig.df$ripeness_num)
+levels(ripeness_v) <- c("Light", "Average", "Strong", "Rotten")
+table(ripeness_v)
+
+cleaning_v <- as.factor(vollaard_orig.df$cleaning_num)
+levels(cleaning_v) <- c("Very good", "Good", "Poor", "Bad")
+table(cleaning_v)
+
+final_score_v <- vollaard_orig.df$finalscore - 7.5
+
+quad.fit <- lm(final_score_v~1+lon+I(lon**2)+lat+I(lat**2)+I(lon*lat)+ weight+ 
+                 price_cat+ temp_cat + fat_cat + freshly_cleaned+ 
+                 micro_v+ripeness_v+cleaning_v+year +factor(atlantic))
 summary(quad.fit)
 
-plain.lm <- lm(final_score~1+ weight+ temp_cat + fat_cat + freshly_cleaned+ micro+ripeness+cleaning+year + k30)
+library(tmap)
+data(NLD_prov)
+get_commune <- function(long, lat)
+{
+  points <- cbind(long, lat) 
+  NLD_provinces_SP <- cx
+}
+
+limburg <- (lat<51.3) & (lon>5.7)
+sum(limburg)
+
+
+
+lin.fit <- lm(final_score_v~1+lon+lat+ weight+ 
+                 price_cat+ temp_cat + fat_cat + freshly_cleaned+ 
+                 micro_v+ripeness_v+cleaning_v+year +factor(limburg) + k30)
+summary(lin.fit)
+
+  
+plain.lm <- lm(final_score_v~1+ weight+ temp_cat + fat_cat + freshly_cleaned+ 
+                 price_cat + micro_v+ripeness_v+cleaning_v+year +factor(atlantic))
 summary(plain.lm)
 anova(quad.fit,plain.lm)
+
+
+vollaard.lm <- lm(formula = final_score_v ~
+                    weight + temp_cat + fat_cat + price_cat + freshly_cleaned +
+                    micro_v + ripeness_v + cleaning_v + year + k30)
+summary(vollaard.lm)
+
 
 lon_lat_contour <- lon_lat_grid %>% add_column(Incpt = 1, lonSq = lon_lat_grid[,1]**2, latSq = lon_lat_grid[,2]**2, lonXlat=lon_lat_grid[,1]*lon_lat_grid[,2])
 lon_lat_contour <- lon_lat_contour[,c(3,1,4,2,5,6)]
 quad.fit.coef <- coefficients(quad.fit)
-pred.values.contour <- as.matrix(lon_lat_contour) %*% as.matrix(quad.fit.coef[1:6]) 
+lin.fit.coef <- coefficients(lin.fit)
+quad.pred.values.contour <- as.matrix(lon_lat_contour) %*% as.matrix(quad.fit.coef[1:6]) 
+lin.pred.values.contour <- as.matrix(lon_lat_contour[,c(1,2,4)]) %*% as.matrix(lin.fit.coef[1:3])
+
 
 # NL_or_not <- (get_countries(lon_lat_grid[,1], lon_lat_grid[,2])=="Netherlands")
 # NL_or_not[is.na(NL_or_not)] <- FALSE
-quad.fit.contour.NL <- tibble(lon=lon_lat_grid[,1], lat=lon_lat_grid[,2], quad.fit.value=pred.values.contour)
+quad.fit.contour.NL <- tibble(lon=lon_lat_grid[,1], lat=lon_lat_grid[,2], quad.fit.value=quad.pred.values.contour)
+lin.fit.contour.NL <- tibble(lon=lon_lat_grid[,1], lat=lon_lat_grid[,2], lin.fit.value=lin.pred.values.contour)
 
 utrecht_drift <- as.numeric(6- quad.fit.contour.NL[utrecht_grid_idx,]$quad.fit.value)
 
 quad.fit.contour.NL <- quad.fit.contour.NL[NL_or_not,] 
 quad.fit.contour.NL$quad.fit.value <- quad.fit.contour.NL$quad.fit.value + utrecht_drift
 
+utrecht_drift <- as.numeric(6- lin.fit.contour.NL[utrecht_grid_idx,]$lin.fit.value)
+lin.fit.contour.NL <- lin.fit.contour.NL[NL_or_not,] 
+lin.fit.contour.NL$lin.fit.value <- lin.fit.contour.NL$lin.fit.value + utrecht_drift
+
+
 # quad.fit.contour.NL.sf <- st_as_sf(quad.fit.contour.NL,coords=c("lon","lat"), crs = 4326)
 
 NL <- ggmap::ggmap(NL_map,extent="normal")
 p <- NL + geom_contour_filled(data=quad.fit.contour.NL, 
                          aes(lon,lat,z=quad.fit.value),
-                         breaks = (6+(1:8))/2, alpha = 0.7) +
+                         breaks = (8+(1:6))/2, alpha = 0.7) +
   ggtitle("   quadratic spatial effect w/ covariates") +
   # scale_fill_manual(values = heat.colors(15)[-c((1:6),13,14)],drop=FALSE) +
   # theme_void() + scale_color_continuous("pred. score") 
   guides(fill=guide_legend(reverse=TRUE))  + 
   # scale_fill_viridis_b()
-  scale_fill_manual(values = viridis::viridis_pal()(13)[-(1:6)],drop=FALSE) +
+  scale_fill_manual(values = viridis::viridis_pal()(11)[-(1:6)],drop=FALSE) +
   #geom_point(data=ours.maps.df, aes(x=lon,y=lat, color=supplier_AD), alpha=0.5) +
   theme_void()
 p
+p <- NL + geom_contour_filled(data=lin.fit.contour.NL, 
+                         aes(lon,lat,z=lin.fit.value),
+                         breaks = (8+(1:6))/2, alpha = 0.7) +
+  ggtitle("   linear spatial effect w/ covariates") +
+  # scale_fill_manual(values = heat.colors(15)[-c((1:6),13,14)],drop=FALSE) +
+  # theme_void() + scale_color_continuous("pred. score") 
+  guides(fill=guide_legend(reverse=TRUE))  + 
+  # scale_fill_viridis_b()
+  scale_fill_manual(values = viridis::viridis_pal()(11)[-(1:6)],drop=FALSE) +
+  #geom_point(data=ours.maps.df, aes(x=lon,y=lat, color=supplier_AD), alpha=0.5) +
+  theme_void()
+p
+
 
 ggsave('plots/spatial_right.png', p, dpi=300, bg='transparent',width = 15, height = 15, units = "cm")
 ## clean version

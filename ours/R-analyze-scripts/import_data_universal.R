@@ -1,13 +1,9 @@
-# Second year only
-# Remove "disqualified outlets"
-# Keep close to Vollaard's second ("definitive") model but remove variable "top ten"
 
 rm(list = ls())
-# setwd("/Users/richardgill/Desktop/Haring/code")
 library(readxl)
 library(tidyverse)
 
-ours.df <- read_excel("datasets/ours.xlsx")
+ours.df <- read_excel("datasets/ours_w_vvo.xlsx")
 ours.df <- arrange(ours.df, vollaard_id)
 
 attach(ours.df)
@@ -80,3 +76,12 @@ atlantic <- (supplier_AD == "A")
 atlanticV <- (vollaard.df$supplier_AD == "A")
 
 Return <- (Repeat == "*")
+ 
+vollaardvanours.df <- haven::read_dta("datasets/Herring-Data-JEBO-2022.dta")
+vollaardvanours.df$Year <- factor(vollaardvanours.df$Year)
+vollaardvanours.df$Cleaning <- factor(vollaardvanours.df$Cleaning)
+vollaardvanours.df$Ripening[vollaardvanours.df$Ripening=="Groen"] = "Licht"
+vollaardvanours.df$Ripening <- factor(vollaardvanours.df$Ripening)
+vollaardvanours.df$verbaljudgment_num <- factor(vollaardvanours.df$verbaljudgment_num)
+vollaardvanours.df$Supplier_A <- factor(vollaardvanours.df$Supplier_A)
+
