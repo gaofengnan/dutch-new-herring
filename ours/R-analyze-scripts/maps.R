@@ -178,16 +178,16 @@ final_score_v <- vollaard_orig.df$finalscore - 7.5
 
 quad.fit <- lm(final_score_v~1+lon+I(lon**2)+lat+I(lat**2)+I(lon*lat)+ weight+ 
                  price_cat+ temp_cat + fat_cat + freshly_cleaned+ 
-                 micro_v+ripeness_v+cleaning_v+year +factor(atlantic))
+                 micro_v+ripeness_v+cleaning_v+year) # +factor(atlantic))
 summary(quad.fit)
 
-library(tmap)
-data(NLD_prov)
-get_commune <- function(long, lat)
-{
-  points <- cbind(long, lat) 
-  NLD_provinces_SP <- cx
-}
+# library(tmap)
+# data(NLD_prov)
+# get_commune <- function(long, lat)
+# {
+#   points <- cbind(long, lat) 
+#   NLD_provinces_SP <- cx
+# }
 
 limburg <- (lat<51.3) & (lon>5.7)
 sum(limburg)
@@ -196,15 +196,15 @@ sum(limburg)
 
 lin.fit <- lm(final_score_v~1+lon+lat+ weight+ 
                  price_cat+ temp_cat + fat_cat + freshly_cleaned+ 
-                 micro_v+ripeness_v+cleaning_v+year +factor(limburg) + k30)
+                 micro_v+ripeness_v+cleaning_v+year)
 summary(lin.fit)
 
   
 plain.lm <- lm(final_score_v~1+ weight+ temp_cat + fat_cat + freshly_cleaned+ 
-                 price_cat + micro_v+ripeness_v+cleaning_v+year +factor(atlantic))
+                 price_cat + micro_v+ripeness_v+cleaning_v+year) # +factor(atlantic))
 summary(plain.lm)
-anova(quad.fit,plain.lm)
-
+anova(quad.fit,plain.lm) # p-value of quadratic effects in lieu of k30, 0.047
+anova(lin.fit,plain.lm) # p-value of linear effects in lieu of k30, 0.005!
 
 vollaard.lm <- lm(formula = final_score_v ~
                     weight + temp_cat + fat_cat + price_cat + freshly_cleaned +
@@ -238,7 +238,7 @@ lin.fit.contour.NL$lin.fit.value <- lin.fit.contour.NL$lin.fit.value + utrecht_d
 # quad.fit.contour.NL.sf <- st_as_sf(quad.fit.contour.NL,coords=c("lon","lat"), crs = 4326)
 
 NL <- ggmap::ggmap(NL_map,extent="normal")
-p <- NL + geom_contour_filled(data=quad.fit.contour.NL, 
+quad.p <- NL + geom_contour_filled(data=quad.fit.contour.NL, 
                          aes(lon,lat,z=quad.fit.value),
                          breaks = (8+(1:6))/2, alpha = 0.7) +
   ggtitle("   quadratic spatial effect w/ covariates") +
@@ -249,8 +249,10 @@ p <- NL + geom_contour_filled(data=quad.fit.contour.NL,
   scale_fill_manual(values = viridis::viridis_pal()(11)[-(1:6)],drop=FALSE) +
   #geom_point(data=ours.maps.df, aes(x=lon,y=lat, color=supplier_AD), alpha=0.5) +
   theme_void()
-p
-p <- NL + geom_contour_filled(data=lin.fit.contour.NL, 
+quad.p
+ggsave(quad.p, file="plots/spatial_right.tiff", device="tiff", dpi=300,bg='transparent',width = 15, height = 15, units = "cm")
+
+lin.p <- NL + geom_contour_filled(data=lin.fit.contour.NL, 
                          aes(lon,lat,z=lin.fit.value),
                          breaks = (8+(1:6))/2, alpha = 0.7) +
   ggtitle("   linear spatial effect w/ covariates") +
@@ -261,10 +263,11 @@ p <- NL + geom_contour_filled(data=lin.fit.contour.NL,
   scale_fill_manual(values = viridis::viridis_pal()(11)[-(1:6)],drop=FALSE) +
   #geom_point(data=ours.maps.df, aes(x=lon,y=lat, color=supplier_AD), alpha=0.5) +
   theme_void()
-p
+lin.p
 
 
-ggsave('plots/spatial_right.png', p, dpi=300, bg='transparent',width = 15, height = 15, units = "cm")
+# ggsave('plots/spatial_right.png', p, dpi=300, bg='transparent',width = 15, height = 15, units = "cm")
+
 ## clean version
 
 vendor_plot_title <- "Venders of 2016 and 2017, Dutch New Herring" # (with pop. density)"
@@ -287,7 +290,7 @@ p <-
    labs(title = vendor_plot_title, fill = "") +
   theme_void()
 p
-ggsave('plots/spatial_left.png', p, dpi=300, bg='transparent',width = 15, height = 15, units = "cm")
+ggsave('plots/spatial_left.tiff', device="tiff", p, dpi=300, bg='transparent',width = 15, height = 15, units = "cm")
 
 if (FALSE) {
 attach(ours.df)

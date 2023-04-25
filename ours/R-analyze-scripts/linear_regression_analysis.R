@@ -116,12 +116,16 @@ sum(vollaard.df$id == vollaard_id)
 
 ## for fig. 1 in the paper
 ## plot two years' scores separately
-hist(final_score[year==2016], breaks=20, 
-     main = "Histogram of final scores in 2016", 
+tiff("plots/hist.tiff", res=300, bg="transparent", height=16, width=15, 
+     unit="cm")
+par(mfrow=c(2,1))
+hist(final_score[year==2016], breaks=20, ylim=c(0,16),
+     main = "Histogram of final scores in 2016", col = "royalblue",
      xlab = "Final test score", ylab = "Numer of outlets")
-hist(final_score[year==2017], breaks=20, 
-     main = "Histogram of final scores in 2017", 
+hist(final_score[year==2017], breaks=20, ylim=c(0,16),
+     main = "Histogram of final scores in 2017", col="royalblue",
      xlab = "Final test score", ylab = "Numer of outlets")
+dev.off()
 
 ## First analysis with our data
 ## I try to reproduce something like Vollaard's first report, second model.
