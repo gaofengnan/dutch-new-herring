@@ -114,8 +114,14 @@ Return <- (Repeat == "*")
 
 sum(vollaard.df$id == vollaard_id)
 
-
-
+## for fig. 1 in the paper
+## plot two years' scores separately
+hist(final_score[year==2016], breaks=20, 
+     main = "Histogram of final scores in 2016", 
+     xlab = "Final test score", ylab = "Numer of outlets")
+hist(final_score[year==2017], breaks=20, 
+     main = "Histogram of final scores in 2017", 
+     xlab = "Final test score", ylab = "Numer of outlets")
 
 ## First analysis with our data
 ## I try to reproduce something like Vollaard's first report, second model.

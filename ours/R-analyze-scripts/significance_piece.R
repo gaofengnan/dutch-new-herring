@@ -19,7 +19,7 @@ price_per_piece_normalized <- price_per_100g*weight/100
 printMeanSD(atlantic, price_per_piece_normalized)
 printMeanSD(atlanticV, price)
 
-sd(fagt[atlanticV])/mean(fat[atlanticV])
+sd(fat[atlanticV])/mean(fat[atlanticV])
 sd(fat[!atlanticV])/mean(fat[!atlanticV])
 min(fat[atlanticV]) #& final_score>2])
 min(fat[!atlanticV]) # & final_score>2])
